@@ -1,13 +1,203 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- <meta charset="utf-8"> -->
   <meta charset="utf-8">
-  <title>Lineclear</title>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <!-- <title>{{Title}}</title> -->
+  <!-- for localhost -->
   <base href="/">
+  <!-- for production v2 -->
+  <!-- <base href="v2/"> -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+  <link rel="icon" type="image/x-icon" href="assets/image/logo.png" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&amp;callback=initMap&amp;libraries=&amp;v=weekly" async=""></script> -->
+  <script type="text/javascript" src="https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css"
+  />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lineclearexpress.com/v2/landing">
+    <meta property="og:title" content="Scan 2 Deliver Express Malaysia | Line Clear Express">
+    <meta property="og:description" content="Provides nationwide courier and  integrated supply chain management solutions from warehousing, pick and pack, last mile delivery and track and trace. Customers are empowered through the Line Clear's smart Scan2Deliver technology to make end-to-end delivery using the web or app.">
+    <meta property="og:image" content="https://lineclearexpress.com/my/public/assets/images/linecleardoubleline.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lineclearexpress.com/v2/landing">
+    <meta property="twitter:title" content="Scan 2 Deliver Express Malaysia | Line Clear Express">
+    <meta property="twitter:description" content="Provides nationwide courier and  integrated supply chain management solutions from warehousing, pick and pack, last mile delivery and track and trace. Customers are empowered through the Line Clear's smart Scan2Deliver technology to make end-to-end delivery using the web or app.">
+    <meta property="twitter:image" content="https://lineclearexpress.com/my/public/assets/images/linecleardoubleline.png">
+   
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150911779-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-150911779-1');
+    </script>
+
 </head>
 <body>
   <app-root></app-root>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- jQuery CDN - Slim version (=without AJAX) -->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+        
+
+      $("#myForm").hide();
+
+      $(".openForm").click(function(){
+        // alert("The paragraph was clicked.");
+        $("#myForm").show();
+      });
+    });
+  </script> 
+  <script type="text/javascript">
+    $(document).ready(function () {
+        // alert('new working')
+            $('#tab-2').hover(function(){
+            $('#tab-2').addClass('tab-active');
+            $('#tab-text-2').addClass('tab-text-hover');
+            $('#tab-1').removeClass('tab-active');
+            $('#tab-text-1').removeClass('tab-text-hover');
+            $('#tab-1').addClass('tab-deactive');
+            $('#tab-text-1').addClass('tab-text');
+            $('#input-col').addClass('tab-2-round');
+            $('#input-col').removeClass('round-right');
+        },function(){
+                $('#tab-2').removeClass('tab-active');
+                $('#tab-text-2').removeClass('tab-text-hover');
+                $('#tab-1').addClass('tab-active');
+                $('#tab-1').removeClass('tab-deactive');
+                $('#tab-text-1').addClass('tab-text-hover');
+                $('#tab-text-1').removeClass('tab-text');
+                $('#input-col').removeClass('tab-2-round');
+                $('#input-col').addClass('round-right');
+        });
+
+
+        $('#tab-3').hover(function(){
+            $('#tab-3').addClass('tab-active');
+            $('#tab-text-3').addClass('tab-text-hover');
+            $('#tab-1').removeClass('tab-active');
+            $('#tab-text-1').removeClass('tab-text-hover');
+            $('#tab-1').addClass('tab-deactive');
+            $('#tab-text-1').addClass('tab-text');
+            $('#input-col').addClass('tab-3-round');
+            $('#input-col').removeClass('round-right');
+        },function(){
+                $('#tab-3').removeClass('tab-active');
+                $('#tab-text-3').removeClass('tab-text-hover');
+                $('#tab-1').addClass('tab-active');
+                $('#tab-text-1').addClass('tab-text-hover');
+                $('#tab-1').removeClass('tab-deactive');
+                $('#tab-text-1').removeClass('tab-text');
+                $('#input-col').removeClass('tab-3-round');
+                $('#input-col').addClass('round-right');
+        });
+
+
+        $('#tab-4').hover(function(){
+            $('#tab-4').addClass('tab-active');
+            $('#tab-text-4').addClass('tab-text-hover');
+            $('#tab-1').removeClass('tab-active');
+            $('#tab-1').addClass('tab-deactive');
+            $('#tab-text-1').removeClass('tab-text-hover');
+            $('#tab-text-1').addClass('tab-text');
+            $('#input-col').addClass('tab-4-round');
+            $('#input-col').removeClass('round-right');
+        },function(){
+            $('#tab-4').removeClass('tab-active');
+            $('#tab-text-4').removeClass('tab-text-hover');
+            $('#tab-1').addClass('tab-active');
+            $('#tab-1').removeClass('tab-deactive');
+            $('#tab-text-1').addClass('tab-text-hover');
+            $('#tab-text-1').removeClass('tab-text');
+            $('#input-col').removeClass('tab-4-round');
+            $('#input-col').addClass('round-right');
+        });
+
+    });
+  
+
+  </script>
+
+<!-- use by contactus  -->
+<script>
+    $(document).ready(function(){
+        $("select").change(function(){
+            $(this).find("option:selected").each(function(){
+                var optionValue = $(this).attr("value");
+                if(optionValue){
+                    $(".form-pad").not("." + optionValue).hide();
+                    $("." + optionValue).show();
+                } else{
+                    $(".form-pad").hide();
+                }
+            });
+        }).change();
+
+        // $('#button').click(function() {
+               
+        //     $('#section').css({
+        //         'height': 'auto',
+        //     });
+        // });
+
+
+        // $(window).on('load', function() {
+        //     $('#myModal').modal('show');
+        // });
+        
+    });
+  </script>
+  <script>
+    // Initialize and add the map
+    function initMap() {
+      // The location of Uluru
+      const uluru = { lat: 3.0418866978956958, lng: 101.56529445767278 };  
+      // The map, centered at Uluru
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 15,
+        center: uluru,
+      });
+      // The marker, positioned at Uluru
+      const marker = new google.maps.Marker({
+        position: uluru,
+        map: map,
+      });
+    }
+  </script>
+
+
+
+
+
 </body>
 </html>
+
+

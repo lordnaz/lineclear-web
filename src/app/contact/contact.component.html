@@ -1,0 +1,400 @@
+<app-header></app-header>
+
+
+<div class="section display-flex-center" style="height: 230px; margin-bottom:50px; margin-top: 86px;">
+    <div class="background-image" style="background-image : url('./assets/image/abstract-blue-white-wave-background_41084-451.jpg')"></div>
+    <div class="container ">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center">Keep in touch with us</h1>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8" style="padding: 0 30;">
+          <!-- <div class="row">
+            <div style="width:100%;" class="custom-select-two">
+              <select class="input-lg">
+                <option value="parcel">Issue with Parcels</option>
+                <option value="lost">Reporting a Lost or Damaged Item</option>
+                <option value="accopen">Corporate Account Opening</option>
+                <option value="crossborder">Cross Border Enquiry</option>
+                <option value="servicepoint">Service Point Enquiry</option>
+                <option value="career">Join Our Team</option>
+              </select>
+            </div>
+          </div> -->
+          <div class="row">
+            <select class="form-control input-lg"
+            #mySelect
+            (change)='selectedOpt(mySelect.value)'>
+                <option value="parcel">Issue with Parcels</option>
+                <option value="lost">Reporting a Lost or Damaged Item</option>
+                <option value="accopen">Corporate Account Opening</option>
+                <option value="crossborder">Cross Border Enquiry</option>
+                <option value="servicepoint">Service Point Enquiry</option>
+                <option value="career">Join Our Team</option>
+            </select>
+          </div>
+
+
+          <div class="row form-pad parcel" *ngIf="isOpt == 'parcel'">
+            <form (submit)="sendMail()" class="form-horizontal" role="form" ngNativeValidate>
+              <div class="form-group">
+                <div class="col-sm-6 mobile-pad">
+                  <input type="text" class="form-control input-lg" name="parcelName" [(ngModel)]="parcelName" [(value)]="parcelName" id="parcelName" placeholder="Name" required>
+                  <!-- <input type="text" id="name" name="userName" [(ngModel)]="userName" [(value)]="userName" placeholder="Full name" required> -->
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control input-lg" name="parcelTracker" [(ngModel)]="parcelTracker" [(value)]="parcelTracker" id="parcelTracker" placeholder="Tracking Number" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-6 mobile-pad">
+                  <input type="email" class="form-control input-lg" name="parcelEmail" [(ngModel)]="parcelEmail" [(value)]="parcelEmail" id="parcelEmail" placeholder="Email" required>
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control input-lg" name="parcelPhone" [(ngModel)]="parcelPhone" [(value)]="parcelPhone" id="parcelPhone" placeholder="Contact Number"required>
+                </div>
+              </div>
+              <div class="form-group ">
+                <div class="col-sm-6 ">
+                  <label class="btn track-btn input-lg display-flex-center " style="width: 100% !important">
+                    <input type="file" id="fileToUpload" name="attachment" class="form-control input-lg">
+                    <div id="uploadtitle" style="width: 100% !important">Upload Parcel Image</div>
+                  </label>
+                </div>
+              </div>
+              <div class="form-group ">
+                <div class="col-sm-12 ">
+                  <textarea name="parcelMessage" [(ngModel)]="parcelMessage" [(value)]="parcelMessage" id="parcelMessage" placeholder="Description" data-form-field="textarea" class="form-control input-lg"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <button type="submit" class="btn btn-default btn-lg track-btn">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+
+          <div class="row form-pad lost" *ngIf="isOpt == 'lost'">
+            <form (submit)="sendMail()" class="form-horizontal" role="form" ngNativeValidate>
+              <div class="form-group">
+                <div class="col-sm-6 mobile-pad">
+                  <input type="text" class="form-control input-lg" name="lostName" [(ngModel)]="lostName" [(value)]="lostName" id="lostName" placeholder="Name" required>
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control input-lg" name="lostTracker" [(ngModel)]="lostTracker" [(value)]="lostTracker" id="lostTracker" placeholder="Tracking Number" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-6 mobile-pad">
+                  <input type="email" class="form-control input-lg" name="lostEmail" [(ngModel)]="lostEmail" [(value)]="lostEmail" id="lostEmail" placeholder="Email" required>
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control input-lg" name="lostPhone" [(ngModel)]="lostPhone" [(value)]="lostPhone" id="lostPhone" placeholder="Contact Number" required>
+                </div>
+              </div>
+              <div class="form-group ">
+                <div class="col-sm-6 ">
+                  <label class="btn track-btn input-lg display-flex-center " style="width: 100% !important">
+                    <input type="file" id="fileToUpload" name="attachment" class="form-control input-lg">
+                    <div id="uploadtitle" style="width: 100% !important">Upload Image of Damage Parcel</div>
+                  </label>
+                </div>
+              </div>
+              <div class="form-group ">
+                <div class="col-sm-12 ">
+                  <textarea name="lostMessage" [(ngModel)]="lostMessage" [(value)]="lostMessage" id="lostMessage" placeholder="Description" data-form-field="textarea" class="form-control input-lg"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <button type="submit" class="btn btn-default btn-lg track-btn">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+
+          <div class="row form-pad accopen" *ngIf="isOpt == 'accopen'">
+            <form (submit)="sendMail()" class="form-horizontal" role="form" ngNativeValidate>
+              <div class="form-group">
+                <div class="col-sm-6 mobile-pad">
+                  <input type="text" class="form-control input-lg" name="accopenCompName" [(ngModel)]="accopenCompName" [(value)]="accopenCompName" id="accopenCompName" placeholder="Company Name" required>
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control input-lg" name="accopenName" [(ngModel)]="accopenName" [(value)]="accopenName" id="accopenName" placeholder="Your Name" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-6 mobile-pad">
+                  <input type="email" class="form-control input-lg" name="accopenEmail" [(ngModel)]="accopenEmail" [(value)]="accopenEmail" id="accopenEmail" placeholder="Email" required>
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control input-lg" name="accopenPhone" [(ngModel)]="accopenPhone" [(value)]="accopenPhone" id="accopenPhone" placeholder="Contact Number" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-6 mobile-pad">
+                  <input type="number" class="form-control input-lg" name="accopenParcel" [(ngModel)]="accopenParcel" [(value)]="accopenParcel" id="accopenParcel" placeholder="No. of parcel(s) per month" required>
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control input-lg" name="accopenAddress" [(ngModel)]="accopenAddress" [(value)]="accopenAddress" id="accopenAddress" placeholder="Addresss" required>
+                </div>
+              </div>
+              <div class="form-group ">
+                <div class="col-sm-12 ">
+                  <textarea name="accopenMessage" [(ngModel)]="accopenMessage" [(value)]="accopenMessage" id="accopenMessage" placeholder="Description" data-form-field="textarea" class="form-control input-lg"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <button type="submit" class="btn btn-default btn-lg track-btn">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+
+          <div class="row form-pad crossborder" *ngIf="isOpt == 'crossborder'">
+            <form (submit)="sendMail()" class="form-horizontal" role="form" ngNativeValidate>
+              <div class="form-group">
+                <div class="col-sm-6 mobile-pad">
+                  <input type="text" class="form-control input-lg" id="crossborderCompName" placeholder="Company Name" 
+                  name="crossborderCompName" [(ngModel)]="crossborderCompName" [(value)]="crossborderCompName" required>
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control input-lg" id="crossborderName" placeholder="Your Name"
+                  name="crossborderName" [(ngModel)]="crossborderName" [(value)]="crossborderName" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-6 mobile-pad">
+                  <input type="email" class="form-control input-lg" id="crossborderEmail" placeholder="Email"
+                  name="crossborderEmail" [(ngModel)]="crossborderEmail" [(value)]="crossborderEmail" required>
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control input-lg" id="crossborderPhone" placeholder="Contact Number"
+                  name="crossborderPhone" [(ngModel)]="crossborderPhone" [(value)]="crossborderPhone" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-6 mobile-pad">
+                  <input type="number" class="form-control input-lg" id="crossborderParcel" placeholder="No. of parcel(s) per month"
+                  name="crossborderParcel" [(ngModel)]="crossborderParcel" [(value)]="crossborderParcel" required>
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control input-lg" id="crossborderAddress" placeholder="Addresss"
+                  name="crossborderAddress" [(ngModel)]="crossborderAddress" [(value)]="crossborderAddress" required>
+                </div>
+              </div>
+              <div class="form-group ">
+                <div class="col-sm-12 ">
+                  <textarea name="crossborderMessage" [(ngModel)]="crossborderMessage" [(value)]="crossborderMessage" id="crossborderMessage" placeholder="Description" data-form-field="textarea" class="form-control input-lg"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <button type="submit" class="btn btn-default btn-lg track-btn">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+
+          <div class="row form-pad servicepoint" *ngIf="isOpt == 'servicepoint'">
+            <form (submit)="sendMail()" class="form-horizontal" role="form" ngNativeValidate>
+              <div class="form-group">
+                <div class="col-sm-6 mobile-pad">
+                  <input type="text" class="form-control input-lg" id="serviceName" placeholder="Name"
+                  name="serviceName" [(ngModel)]="serviceName" [(value)]="serviceName" required>
+                </div>
+                <div class="col-sm-6">
+                  <input type="email" class="form-control input-lg" id="serviceEmail" placeholder="Email"
+                  name="serviceEmail" [(ngModel)]="serviceEmail" [(value)]="serviceEmail" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-6 mobile-pad">
+                  <input type="text" class="form-control input-lg" id="servicePhone" placeholder="Contact Number"
+                  name="servicePhone" [(ngModel)]="servicePhone" [(value)]="servicePhone" required>
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control input-lg" id="serviceAddress" placeholder="Address"
+                  name="serviceAddress" [(ngModel)]="serviceAddress" [(value)]="serviceAddress" required>
+                </div>
+              </div>
+              <div class="form-group ">
+                <div class="col-sm-12 ">
+                  <textarea name="serviceMessage" [(ngModel)]="serviceMessage" [(value)]="serviceMessage" id="message" placeholder="Description" data-form-field="textarea" class="form-control input-lg"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <button type="submit" class="btn btn-default btn-lg track-btn">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+
+          <div class="row form-pad career" id="career" *ngIf="isOpt == 'career'">
+            <form (submit)="sendMail()" class="form-horizontal" role="form" ngNativeValidate>
+              <div class="form-group ">
+                <div class="col-sm-6 mobile-pad">
+                  <input type="text" class="form-control input-lg" id="careerName" placeholder="Name"
+                  name="careerName" [(ngModel)]="careerName" [(value)]="careerName" required>
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control input-lg" id="careerPhone" placeholder="Phone Number"
+                  name="careerPhone" [(ngModel)]="careerPhone" [(value)]="careerPhone" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-6 mobile-pad">
+                  <input type="email" class="form-control input-lg" id="careerEmail" placeholder="Email"
+                  name="careerEmail" [(ngModel)]="careerEmail" [(value)]="careerEmail" required>
+                </div>
+                <div class="col-sm-6">
+                  <label class="btn track-btn input-lg display-flex-center " style="width: 100% !important">
+                    <input type="file" id="fileToUpload" name="attachment" class="form-control input-lg">
+                    <div id="uploadtitle" style="width: 100% !important">Upload Your Resume</div>
+                  </label>
+                </div>
+              </div>
+              <div class="form-group ">
+                <div class="col-sm-12 ">
+                  <textarea name="careerMessage" [(ngModel)]="careerMessage" [(value)]="careerMessage" required id="careerMessage" placeholder="Description" data-form-field="textarea" class="form-control input-lg"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <button type="submit" class="btn btn-default btn-lg track-btn">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-4">
+            <div class="col-lg-12 col-md-12 sidebar-title text-center" style="background-color: #40BFEF !important;">
+                <h4 style="margin-top:0; margin-bottom:0px;">OPERATING HOURS</h4>
+              </div>
+              <div class="col-md-12 col-lg-12 sidebar-info">
+                <h5>
+                  <b>Semenanjung, Sabah &amp; Sarawak</b>
+                </h5>
+                <p>8.30am - 6.30pm (Monday - Friday)
+                  <br>8.30am - 12.30pm (Saturday)</p>
+                <h5>
+                  <b>Kelantan &amp; Terangganu</b>
+                </h5>
+                <p>8.30am - 6.30pm (Sunday - Thursday)
+                  <br>8.30am - 12.30pm (Saturday)</p>
+              </div>
+              <div class="col-lg-12 col-md-12 sidebar-title text-center" style="background-color: #40BFEF !important;">
+                <h4 style="margin-top:0; margin-bottom:0px;">CONTACT DETAILS</h4>
+              </div>
+              <div class="col-md-12 col-lg-12 sidebar-info">
+                <h5>
+                  <b>Phone</b>
+                </h5>
+                    <p>CS : <a href="tel:60165015050" style="text-decoration: none;">016-501 5050</a><br>
+                    Fax : <a href="tel:600378903536" style="text-decoration: none;;">03-7890 3536</a></p>
+                <h5>
+                  <b>Email</b>
+                </h5>
+                    <p style="display:inline;"><a href="mailto: customersupport@lineclearexpress.com">customersupport@lineclearexpress.com</a></p>
+              </div>
+              <div class="col-md-12 col-lg-12 sidebar-info2">
+                <div class="row">
+                  <div class="col-xs-3 text-center">
+                    <a><i class="fa fa-2x fa-fw fa-facebook"></i></a>
+                  </div>
+                  <div class="col-xs-3">
+                    <a><i class="fa fa-2x fa-fw fa-twitter text-info"></i></a>
+                  </div>
+                  <div class="col-xs-3">
+                    <a><i class="fa fa-2x fa-fw fa-instagram text-muted"></i></a>
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    <a><i class="fa fa-2x fa-fw fa-youtube hub text-danger"></i></a>
+                  </div>
+                </div>
+              </div>
+          <!-- <div class="col-md-12 col-lg-12 sidebar-info">
+            <h4 style="margin-top:0;">OPERATING HOURS</h4>
+            <h5>
+              <b>Semenanjung, Sabah &amp; Sarawak</b>
+            </h5>
+            <p>8.30am - 6.30pm (Monday - Friday)
+              <br>8.30am - 12.30pm (Saturday)</p>
+            <h5>
+              <b>Kelantan &amp; Terangganu</b>
+            </h5>
+            <p>8.30am - 6.30pm (Sunday - Thursday)
+              <br>8.30am - 12.30pm (Saturday)</p>
+              <br>
+            <h4>CONTACT DETAILS</h4>
+            <h5>
+              Phone</h5>
+                <div style="float:left;">
+                    <span style="display:inline;">CS: </span>
+                    <span style="display:inline;"><a href="tel:60165015050" style="text-decoration: none; font-weight: bold;">016-501 5050</a></span>
+                </div>
+                <br>
+                <div style="float:left;">
+                    <span style="display:inline;">Fax: </span>
+                    <span style="display:inline;"><a href="tel:600378903536" style="text-decoration: none; font-weight: bold;">03-7890 3536</a></span>
+                </div>
+            <br>
+            <h5>
+              Email
+            </h5>
+            
+            <div class="row" style="float:left; word-wrap: break-word;">
+                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                    <span style="display:inline; font-size: 14px;"><a href="mailto: customersupport@lineclearexpress.com">customersupport@lineclearexpress.com</a></span>
+                </div>
+            </div>
+            <!-- <p style="margin-bottom: 30px;">8.30am - 6.30pm (Sunday - Thursday)
+              <br>8.30am - 12.30pm (Saturday)</p> -->
+              <!-- <br>
+            <div class="row" style="margin-top:10px; margin-bottom: 10px;">
+              <div class="col-xs-3 text-center">
+                <a><i class="fa fa-2x fa-fw fa-facebook"></i></a>
+              </div>
+              <div class="col-xs-3">
+                <a><i class="fa fa-2x fa-fw fa-twitter text-info"></i></a>
+              </div>
+              <div class="col-xs-3">
+                <a><i class="fa fa-2x fa-fw fa-instagram text-muted"></i></a>
+              </div>
+              <div class="col-xs-3 text-center">
+                <a><i class="fa fa-2x fa-fw fa-youtube hub text-danger"></i></a>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section" style="margin-top: 0px; margin-bottom: 50px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="padding:0;">
+          <!-- <div id="map"> -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15936.790812718982!2d101.5651806!3d3.0416138!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9920e47dca802a68!2sLine%20Clear%20Express%20HQ!5e0!3m2!1sen!2smy!4v1619966643681!5m2!1sen!2smy" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <app-footer></app-footer>

@@ -1,0 +1,15 @@
+{
+    "/quote/*": {
+        "target": "https://lineclearexpress.com/my",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    },
+    "/viewandtrack*": {
+        "target": "https://8ym3webome.execute-api.ap-south-1.amazonaws.com/production/1.0",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+
+}

@@ -1,0 +1,265 @@
+<!-- <p>quote works!</p> -->
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div class="col bg-warning" style="height: 50px;">test</div>
+        <div class="col bg-danger" style="background-image : url('/assets/image/qoutebackground-04.jpg')">test</div>
+        <div class="col bg-success">test</div>
+    </div>
+</div> -->
+<app-header></app-header>
+
+<div class="section" style="margin-top: 86px;">
+    <div class="background-image hidden-sm hidden-xs" style="background-image : url('./assets/image/desktop-instant-quote.jpg')"></div>
+    <div class="background-image hidden-lg hidden-md" style="background-image : url('./assets/image/mobile-instant-quote.jpg')"></div>
+    <div class="container qoute-div">
+      <div class="col-md-12 ">
+        <div class="col-md-6"></div>
+        <div class="col-md-6 col-sm-12 col-xs-12 qoute-panel"  data-aos="zoom-in-down">
+
+          <div *ngIf="!quote_result; else noResult" class="row qoute-form" id="qoute-form">
+            <div class="col-md-12" style="padding-bottom: 15px;">
+    
+                <div class="d-none d-sm-none d-md-block d-lg-block d-xl-block">
+                    <h2 class="quote-text col-gap">INSTANT QUOTE</h2>
+                </div>
+
+                <div class="d-block d-sm-block d-md-none d-lg-none d-xl-none">
+                    <h3 class="text-center">INSTANT QUOTE</h3>
+                </div>
+              
+                <!-- <a target="_blank" href="mailto:someone@yoursite.com?cc=john@yoursite.com&amp;amp;amp;amp;bcc=bob@yoursite.com&amp;amp;amp;amp;subject=Requested%20documents&amp;amp;amp;amp;ni_email_cfg_base64json=ub2xvZ3kiXSwNCg">Example link</a> -->
+                
+                <form #quoteForm="ngForm" (submit)="quoteSubmit(quoteForm)" ngNativeValidate>
+                    <div class="form-row">
+                        <div class="col-md-6 form-group">
+                            <label for="inputSender" class="control-label label-qoute">SENDER</label>
+                            <!-- <input ngModel #sender="ngModel" minlength="5" maxlength="5" name="inputSender" class="form-control input-lg" [ngClass]="{'is-invalid': isInvalid, 'is-valid': isValid}" placeholder="Sender Postcode" type="text" required> -->
+                            <input ngModel #sender="ngModel" minlength="5" maxlength="5" name="inputSender" class="form-control input-lg" placeholder="Sender Postcode" type="text" required>
+                            <div class="valid-feedback" *ngIf="sender.touched && !sender.invalid">
+                                <b>Perfect!</b>
+                            </div>
+                            <div class="invalid-feedback" *ngIf="sender.touched && sender.invalid && sender.value!=''">
+                                <b>Postcode require 5 digit!</b> 
+                            </div>
+                            
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <label for="inputRecipient" class="control-label label-qoute">RECIPIENT</label>
+                            <!-- <input ngModel #recipient="ngModel" minlength="5" maxlength="5" name="inputRecipient" class="form-control input-lg" [ngClass]="{'is-invalid': isInvalid2, 'is-valid': isValid2}" placeholder="Recipient Postcode" type="text" required> -->
+                            <input ngModel #recipient="ngModel" minlength="5" maxlength="5" name="inputRecipient" class="form-control input-lg" placeholder="Recipient Postcode" type="text" required>
+                            <div class="valid-feedback" *ngIf="recipient.touched && !recipient.invalid">
+                                <b>perfect!</b>
+                            </div>
+                            <div class="invalid-feedback" *ngIf="recipient.touched && recipient.invalid && recipient.value!=''">
+                                <b>Postcode require 5 digit!</b> 
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-6 form-group has-feedback">
+                            <label for="inputWeight" class="control-label label-qoute">WEIGHT (KG)</label>
+                            <input [(ngModel)]="inputWeight" [(value)]="inputWeight" name="inputWeight" class="form-control input-lg" placeholder="Item Weight (KG)" type="text" required>
+
+                            
+                        </div>
+                        <!-- <div class="col-md-1 form-group">
+                            <button type="button" class="btn btn-primary" style="margin-top: 40px; float: left" data-toggle="modal" data-target="#modalCalculator">
+                                A
+                            </button>
+                        </div> -->
+
+                        <div class="col-md-6 form-group">
+                            <label for="inputType" class="control-label label-qoute">ITEM TYPE</label>
+                            <select ngModel name="inputType" class="form-control input-lg" id="sel1" required>
+                              <option value="D">Document</option>
+                              <option value="P">Parcel</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 form-group">
+                        <!-- <a href="" (click)="showSpinner()">showSpinner</a> -->
+                        <a class="btn btn-block btn-info btn-lg track-btn btn-qoute" data-toggle="modal" data-target="#modalCalculator">Volumetric Calculator</a>
+                        <button class="btn btn-block btn-info btn-lg track-btn btn-qoute" type="submit">Quote Now !</button>
+                    </div>
+
+                </form>
+            </div>
+          </div>
+        <!-- </form> -->
+
+          <ng-template #noResult>
+
+            <div class="row qoute-result" id="qoute-result" style=" padding-bottom:20px">
+              <div class="col-md-12 col=gap">
+                <h3 class="text-center" style="padding-bottom:10px;">
+                  <b>DELIVERY CHARGE</b>
+                </h3>
+              </div>
+              <div class="col-md-12  middle-div col-gap">
+                <div class="col-5 postcode-label">
+                  <h6 class="text-center">FROM POSTCODE : {{origincity | uppercase}}</h6>
+                </div>
+                <div class="col-2 text-center">
+                  <i class="fa fa-2x fa-caret-right"></i>
+                </div>
+                <div class="col-5  postcode-label">
+                  <h6 class="text-center">TO POSTCODE : {{destinationcity | uppercase}}</h6>
+                </div>
+              </div>
+              <div class="col-md-8 col-md-offset-2 text-center col-gap">
+                <h4>ITEM TYPE : {{itemType | uppercase}} | WEIGHT : {{inputWeight}} KG</h4>
+              </div>
+              <div class="col-md-8 col-md-offset-2">
+                <table class="table table-condensed">
+                  <tbody>
+                    <tr>
+                      <td>Delivery Fee</td>
+                      <td>{{deliverycharge | number: '1.2-2'}}</td>
+                    </tr>
+                    <tr>
+                      <td>Surcharges</td>
+                      <td>{{surcharge | number: '1.2-2'}}</td>
+                    </tr>
+                    <tr>
+                      <td>Estimated Price</td>
+                      <td>{{price | number: '1.2-2'}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-md-12 col-gap">
+                <ul>
+                  <li>All prices are inclusive of 6 % SST.</li>
+                  <li>Surcharge are estimated for Out of Delivery Area.</li>
+                  <li>Weight are applied based on Volumetric Weight (L x W x H /6000) or actual
+                    weight whichever is higher.</li>
+                  <li>Line Clear Express reserves the ight to change the rate without prior
+                    notice.</li>
+                </ul>
+              </div>
+              <div class="col-md-6 form-group">
+                <button (click)="setBool()" type="button" class="btn btn-block btn-info btn-lg track-btn btn-reset">Back</button>
+              </div>
+              <div class="col-md-6 form-group">
+                <button type="submit" class="btn btn-block btn-info btn-lg track-btn">Book Now</button>
+              </div>
+            </div>
+            
+          </ng-template>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Calculator Modal Popup -->
+<div class="modal fade" id="modalCalculator" tabindex="-1" role="dialog" aria-labelledby="modalCalculator" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <div class="d-none d-sm-none d-md-block d-lg-block d-xl-block">
+                    <h3 class="modal-title" id="exampleModalLongTitle">{{title | uppercase}}</h3>
+                </div>
+                
+                <div class="d-block d-sm-block d-md-none d-lg-none d-xl-none">
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{title | uppercase}}</h5>
+                </div>
+
+                <button type="button" id="calculate" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" style="margin-right: 10px">&times;</span>
+                </button>
+            </div>
+            <form (submit)="getVolume()" ngNativeValidate>
+                <div class="modal-body">
+                    <!-- <h1>Weight Calculator</h1> -->
+                    <div class="form-row">
+                        <div class="col form-group has-feedback text-center" style="padding-top: 25px; padding-bottom: 25px;">
+                            <label for="inputWidth" class="control-label label-qoute">Width(cm)</label>
+                            <input [(ngModel)]="inputWidth" [(value)]="inputWidth" name="inputWidth" 
+                            class="form-control input-lg" placeholder="Width in centimeter(cm)" 
+                            type="number" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col form-group has-feedback text-center" style="padding-bottom: 25px;">
+                            <label for="inputLength" class="control-label label-qoute">Length(cm)</label>
+                            <input [(ngModel)]="inputLength" [(value)]="inputLength" name="inputLength" 
+                            class="form-control input-lg" placeholder="Length in centimeter(cm)" 
+                            type="number" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col form-group has-feedback text-center" style="padding-bottom: 25px;">
+                            <label for="inputHeight" class="control-label label-qoute">Height(cm)</label>
+                            <input [(ngModel)]="inputHeight" [(value)]="inputHeight" name="inputHeight" 
+                            class="form-control input-lg" placeholder="Height in centimeter(cm)" 
+                            type="number" required>
+                        </div>
+                    </div>
+                    
+                    <small class="text-muted"><i>Weight = (Width x Length x Height)/6000</i></small>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">&nbsp;Close</button>
+                    <button type="submit" class="btn btn-success">Calculate&nbsp;</button>
+                    <!-- <button type="submit" class="btn btn-warning" >check Quantity&nbsp;<fa-icon [icon]="iconCart"></fa-icon></button> -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- calculator -->
+<div class="form-popup" id="myForm">
+  <div  class="form-container">
+    <h1 class="mbr-section-subtitle mbr-fonts-style display-4">
+        <strong>Volumetric Calculator</strong>
+    </h1>
+    <label style="padding:0;padding-top:25px;font-size: 0.8em;">
+    <b>Width</b></label>
+    <input type="number" min="0" step="0.1" id="width" name="width"
+    onkeypress="return isNumberKey(event)" placeholder="Width (cm)"
+    class="form-control" value="">
+
+    <label style="padding:0;padding-top:25px;font-size: 0.8em;">
+    <b>Length</b></label>
+    <input type="number" min="0" step="0.1" id="length" name="height"
+    onkeypress="return isNumberKey(event)" placeholder="Length (cm)"
+    class="form-control" value="">
+
+    <label style="padding:0;padding-top:25px;font-size: 0.8em;">
+    <b>Height</b></label>
+    <input type="number" min="0" step="0.1" id="height" name="height"
+    onkeypress="return isNumberKey(event)" placeholder="Height (cm)"
+    class="form-control" value="">
+
+    <button class="btn" onclick="javascript:calculateDW();">Calculate</button>
+    <button class="btn cancel" onclick="closeForm()">Close</button>
+
+    <div id="errormessaged">
+    </div>
+  </div>
+</div>
+
+
+<app-footer></app-footer>
+
+
+<div *ngIf="visible">
+    <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" 
+    size = "default" 
+    color = "#fff" 
+    type = "square-jelly-box" 
+    [fullScreen] = "true">
+        <p style="color: white" > Loading... </p>
+    </ngx-spinner>
+</div>

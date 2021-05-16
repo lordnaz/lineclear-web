@@ -1,0 +1,106 @@
+<app-header></app-header>
+
+<div class="section" id="track-section">
+    <div class="background-image hidden-sm hidden-xs" style="background-image : url('./assets/image/desktop-tracktrace-01.jpg'); background-position: bottom !important;"></div>
+    <div class="background-image hidden-lg hidden-md" style="background-image : url('./assets/image/mobile-tracktrace-01.jpg'); background-position: bottom !important;"></div>
+    <div class="container" style="margin-top: 5%;">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section mobile-pad">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12" style="padding-bottom:10px;">
+                  <h1 class="text-center">
+                    <b>TRACK &amp; TRACE</b>
+                  </h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-offset-3 col-md-6">
+                  <!-- <form role="form">
+                    <div class="form-group">
+                      <div class="input-group input-group-lg">
+                        <input type="text" class="form-control" placeholder="Search by state,city and postcode">
+                        <span class="input-group-btn">
+                          <a class="btn btn-default track-btn" type="submit">Track Now</a>
+                        </span>
+                      </div>
+                    </div>
+                  </form> -->
+
+                  <form (submit)="getTrackerData('viewHere')" class="form-horizontal form-track" role="form">
+                        <div class="form-group">
+                            <div class="input-group input-group-lg">
+                                <input [(ngModel)]="trackCode" [(value)]="trackCode" name="trackCode" type="text" class="form-control input-lg" id="inputTrackNo" placeholder="Tracking No...">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-block btn-lg track-btn">TRACK NOW</button>
+                                </span>
+                            </div>
+                        </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="viewHere" *ngIf="trackerDisplay" style="margin-top: 0px;">
+    <div *ngFor="let list of trackerListRecon" class="container" style="margin-bottom: 50px;">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- <img src="/assets/image/step-1.png" class="center-block img-responsive step-img" style="margin-bottom: 10px;"> -->
+          <img [src]="list.image" class="center-block img-responsive step-img" style="margin-bottom: 10px;">
+        </div>
+      </div>
+      <div *ngFor="let item of list.data; first as isFirst" class="row" style="margin-top:15px; margin-bottom:15px;">
+        <!-- <span *ngIf="isFirst">default</span> -->
+        <div class="col-md-8 col-md-offset-2 ">
+          <div *ngIf="isFirst; else pendingJob" class="col-xs-4 col-sm-2 job-done" style="padding-right:0px; padding-left:0px;">
+            <div class="col-md-12 time-col vcenter">
+              <p class="text-right progress-text">{{item.LastModifiedDate}}
+                <br>{{item.LastModifiedTime}}</p>
+            </div>
+          </div>
+
+          <ng-template #pendingJob>
+            <div class="col-xs-4 col-sm-2 job-pending" style="padding-right:0px; padding-left:0px;">
+                <div class="col-md-12 time-col vcenter">
+                  <p class="text-right progress-text">{{item.LastModifiedDate}}
+                    <br>{{item.LastModifiedTime}}</p>
+                </div>
+            </div>
+          </ng-template>
+
+          <div class="col-xs-8 col-sm-10 " style="padding-right:0px; padding-left:10px;">
+            <div class="col-md-12 detail-col vcenter">
+              <p class=" progress-text">{{item.Description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="height: 170px;"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <app-footer></app-footer>
+
+  <div *ngIf="visible" style="z-index: 9999999999999;">
+    <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" 
+    size = "default" 
+    color = "#fff" 
+    type = "square-jelly-box" 
+    [fullScreen] = "true">
+        <p style="color: white" > Loading... </p>
+    </ngx-spinner>
+</div>

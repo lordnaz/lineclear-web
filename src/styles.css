@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~animate.css/animate.compat';
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+
+  font-family: 'Libre Franklin', sans-serif !important;
+  font-weight: bolder !important;
+  line-height: 1 !important;
+  
+  /* Font name: "Libre Franklin", sans-serif;
+    Font weight: 700 */
+}
+
+/* SMARTPHONES PORTRAIT */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  h1{
+      font-size: 20px !important;
+  }
+  p {
+    font-size: 12px !important;
+  }
+}
+
+/* TABLET */
+@media only screen and (min-width: 768px) and (max-width: 967px) {
+  p {
+      font-size: 14px;
+  }
+}
+
+
+/* LAPTOP */
+@media only screen and (min-width: 968px) and (max-width: 1823px) {
+    p {
+        font-size: 14px;
+    }
+
+    .nav li a span{
+        font-size: 14px;
+    }
+}

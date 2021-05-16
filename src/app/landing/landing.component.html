@@ -1,0 +1,169 @@
+<app-header></app-header>
+<!-- <h1 class="animate__animated animate__bounce">An animated element</h1> -->
+<div id="fullcarousel-example" data-interval="5000" class="carousel slide" data-ride="carousel" style="margin-top: 86px;">
+    <div class="carousel-inner">
+      <div class="item active">
+        <a href="javascript:;" (click)="openPromo()"><img src="./assets/image/s1-d.jpg" class="desktop-view"></a>
+        <a href="javascript:;" (click)="openPromo()"><img src="./assets/image/s1-m.jpg" class="mobile-view"></a>
+        <a href="javascript:;" (click)="openPromo()"><img src="./assets/image/s1-m.jpg" class="tablet-view"></a>
+      </div>
+      <div class="item">
+        <a href="javascript:;" (click)="openApp()"><img src="./assets/image/s2-d.jpg" class="desktop-view"></a>
+        <a href="javascript:;" (click)="openApp()"><img src="./assets/image/s2-m.jpg" class="mobile-view"></a>
+        <a href="javascript:;" (click)="openApp()"><img src="./assets/image/s2-m.jpg" class="tablet-view"></a>
+      </div>
+    </div>
+    <a class="left carousel-control" href="#fullcarousel-example" data-slide="prev"><i class="icon-prev fa fa-angle-left"></i></a>
+    <a class="right carousel-control" href="#fullcarousel-example" data-slide="next"><i class="icon-next fa fa-angle-right"></i></a>
+  </div>
+  <div class="panel-row" style="z-index: 100;">
+    <div class="row">
+      <div class="col-xs-6 col-sm-4 col-md-3 tab-active paan" id="tab-1">
+        <h4 class="text-center tab-text-hover" id="tab-text-1">TRACK &amp; TRACE</h4>
+      </div>
+      <div class="col-xs-6 col-sm-4 col-md-3 paan" id="tab-2" (click)="goToQuote()">
+        <h4 class="text-center tab-text" id="tab-text-2">INSTANT QUOTE</h4>
+      </div>
+      <div class="col-sm-4 col-md-3 hidden-xs paan" id="tab-3" (click)="goToPitstop()">
+        <h4 class="text-center tab-text" id="tab-text-3">PITSTOP LOCATOR</h4>
+      </div>
+      <div class="col-md-3 hidden-sm hidden-xs paan" id="tab-4" (click)="goToPitstop()">
+        <h4 class="text-center tab-text" id="tab-text-4">CONTACT US</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 input-col round-right" id="input-col">
+
+          <form (submit)="getTrackerData('viewHere')" class="form-horizontal form-track" role="form">
+              <div class="form-group">
+                <div class="col-sm-8 col-md-9 pad-10">
+                  <input [(ngModel)]="trackCode" [(value)]="trackCode" name="trackCode" type="text" class="form-control input-lg" id="inputTrackNo" placeholder="Tracking No...">
+                </div>
+                <div class="col-sm-4 col-md-3">
+                  <button type="submit" class="btn btn-block btn-default btn-lg track-btn">TRACK NOW</button>
+                </div>
+              </div>
+            </form>
+      </div>
+    </div>  
+
+  </div>
+
+<!-- class cover-div dibuang dari section kerana menghalang gambar dari keluar -->
+<!-- <div class="section cover-div">
+    <div class="background-image" style="background-image : url('/assets/image/123123-01.png')"></div>
+    <div class="container">
+      <div class="row cover-text">
+        <div class="col-md-6">
+          <h1 class="cover-text-1 text-left" style="font-weight: bold;">EASY &amp; TIME DELIVERY</h1>
+          <p class="cover-text-2">Scan To Delivery Express</p>
+        </div>
+        <div class="col-md-6"></div>
+      </div>
+    </div>
+    <div class="panel-row">
+      <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-3 tab-active" id="tab-1" style="cursor: pointer;">
+          <h4 class="text-center tab-text-hover" id="tab-text-1">TRACK &amp; TRACE</h4>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3" id="tab-2" style="cursor: pointer;" (click)="goToQuote()">
+          <h4 class="text-center tab-text" id="tab-text-2">INSTANT QOUTE</h4>
+        </div>
+        <div class="col-sm-4 col-md-3 hidden-xs" id="tab-3" style="cursor: pointer;" (click)="goToPitstop()">
+          <h4 class="text-center tab-text" id="tab-text-3">PITSTOP LOCATION</h4>
+        </div>
+        <div class="col-md-3 hidden-sm hidden-xs" id="tab-4" style="cursor: pointer;">
+          <h4 class="text-center tab-text" id="tab-text-4">CONTACT US</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 input-col round-right" id="input-col">
+
+          <form (submit)="getTrackerData()" class="form-horizontal form-track" role="form">
+            <div class="form-group">
+              <div class="col-sm-8 col-md-9 col-lg-10 pad-10">
+                <input [(ngModel)]="trackCode" [(value)]="trackCode" name="trackCode" type="text" class="form-control input-lg" id="inputTrackNo" placeholder="Tracking No...">
+              </div>
+              <div class="col-sm-4 col-md-3 col-lg-2">
+                <button type="submit" class="btn btn-block btn-default btn-lg track-btn">TRACK NOW</button>
+              </div>
+            </div>
+          </form>
+
+
+
+        </div>
+      </div>
+      <div class="row">
+        <img src="/assets/image/scroll.gif" class="center-block img-responsive" style="width:40px; margin-top:10px; margin-bottom:10px">
+      </div>
+    </div>
+  </div> -->
+
+    <div class="section" id="viewHere" *ngIf="trackerDisplay" style="padding-top: 100px;">
+        <div *ngFor="let list of trackerListRecon" class="container" style="margin-bottom: 50px;">
+          <div class="row">
+            <div class="col-md-12">
+              <img [src]="list.image" class="center-block img-responsive step-img" style="margin-bottom: 10px;">
+            </div>
+          </div>
+    
+          <div *ngFor="let item of list.data; first as isFirst" class="row" style="margin-top:15px; margin-bottom:15px;">
+            <!-- <span *ngIf="isFirst">default</span> -->
+            <div class="col-md-8 col-md-offset-2 ">
+              <div *ngIf="isFirst; else pendingJob" class="col-xs-4 col-sm-2 job-done" style="padding-right:0px; padding-left:0px;">
+                <div class="col-md-12 time-col vcenter">
+                  <p class="text-right progress-text">{{item.LastModifiedDate}}
+                    <br>{{item.LastModifiedTime}}</p>
+                </div>
+              </div>
+    
+              <ng-template #pendingJob>
+                <div class="col-xs-4 col-sm-2 job-pending" style="padding-right:0px; padding-left:0px;">
+                    <div class="col-md-12 time-col vcenter">
+                      <p class="text-right progress-text">{{item.LastModifiedDate}}
+                        <br>{{item.LastModifiedTime}}</p>
+                    </div>
+                </div>
+              </ng-template>
+    
+              <div class="col-xs-8 col-sm-10 " style="padding-right:0px; padding-left:10px;">
+                <div class="col-md-12 detail-col vcenter">
+                  <p class=" progress-text">{{item.Description}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+
+  <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  <button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#exampleModal">Open Modal</button>
+  <div class="modal fade" style="padding-left: 0px !important;" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body">
+            <img src="./assets/image/noticeimage.png" alt="" class="img-fluid" style="height: auto; width: auto;">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <app-section></app-section>
+
+  <app-footer></app-footer>
+
+<div *ngIf="visible" style="z-index: 9999999999999;">
+    <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" 
+    size = "default" 
+    color = "#fff" 
+    type = "square-jelly-box" 
+    [fullScreen] = "true">
+        <p style="color: white" > Loading... </p>
+    </ngx-spinner>
+</div>

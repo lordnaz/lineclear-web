@@ -1,27 +1,43 @@
-# Lineclear
+Lineclear Express 
+=================
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
+An Angular project for Lineclear Express websites 2.0
 
-## Development server
+## Project Details
+- Project : Lineclear Website 
+- Version : v1.0
+- Author : Nazrul Hanif
+- Date Created : 20210516
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Contributor
+Frontend Developer / UX : Nazrul Hanif
+Frontend Developer / UI : Farhan Sulieman
+Designer : Amir 
+Content Provider : Bella
+Project Lead : Aaron
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Local Setup
 
-## Build
+This Instruction is for the first timer setup.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+1. Install NodeJS automatically with NPM Package (https://nodejs.org/en/download/)
+2. Clone this repo to your local
+3. Dependency Manager : run `npm install` in your cmd. 
+```
+$ npm install
+```
+4. run `ng serve` in your cmd go to localhost:4200 or http://127.0.0.1:4200 (default at port 4200 can be change if require)
+```
+$ ng serve
+```
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Production Building
 
-## Running end-to-end tests
+```
+$ ng build --prod
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Production 
+go to https://lineclearexpress.com/ for LIVE URL
