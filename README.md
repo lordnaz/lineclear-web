@@ -32,6 +32,8 @@ $ npm install
 $ ng serve
 ```
 
+## IMPORTANT**
+Upon build project, make sure to modify base-href in index.html if require. Otherwise, the assets cannot be found upon deployment.
 
 ## Production Building
 
