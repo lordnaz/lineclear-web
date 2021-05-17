@@ -29,8 +29,6 @@ export class ApiService {
       let localURL = this.currBaseURL.match(/localhost/g);
 
       if (prodURL != null) {
-          // later if we have new production endpoint, kindly change all the endpoint under prodURL section 
-        //   this.userServiceURL = "http://209.58.160.20:20921/";
           this.lineClearURL = "https://lineclearexpress.com/my";
           this.trackerURL = "https://8ym3webome.execute-api.ap-south-1.amazonaws.com/production/1.0"
 
@@ -59,10 +57,6 @@ export class ApiService {
         "&parceltype=" + parceltype;
 
         console.log('url: ' + this.lineClearURL + url)
-            
-        // const url = this.payServiceURL + "payments/makePayment";
-
-        // http://lineclearexpress.com/my/quote/quote.php?zipfrom=48300&zipto=40150&weight=0.2&parceltype=D
 
         return this.http.get(this.lineClearURL + url);
     }
@@ -88,23 +82,6 @@ export class ApiService {
     }
 
 
-    // postSendEmail(data):Observable<any> {
-
-    //     const httpOptions = {
-    //         headers: new HttpHeaders(
-    //         { 
-    //             'Authorization': `Bearer ${this.token}`,
-    //             'Content-Type': 'application/json'
-    //             // 'Access-Control-Allow-Methods': 'POST',
-    //             // 'Access-Control-Allow-Origin': '*'
-    //         })
-    //     }
-        
-    //     const url = this.trackerURL + "/viewandtrack";
-    //     return this.http.post(url, data, httpOptions);
-    // }
-
-
     getPitstopLocator(postcode){
         const header = {
             // headers: new HttpHeaders().set("Authorization", `Bearer ${this.token}`),
@@ -118,30 +95,6 @@ export class ApiService {
 
         return this.http.get(this.lineClearURL + url);
     }
-
-    // getQuotation(zipfrom, zipto, weight, parceltype):Observable<any> {
-    //     const httpOptions = {
-    //         headers: new HttpHeaders({
-    //             'Content-Type':  'application/json',
-    //             'Access-Control-Allow-Headers': 'Content-Type',
-    //             'Access-Control-Allow-Methods': 'GET',
-    //             'Access-Control-Allow-Origin': '*'
-    //           })
-    //     }
-    //     // http://209.58.160.20:7072/carts/3/items?page=0&pageSize=20
-    //     const url =
-    //     "/quote/quote.php"+
-    //     "?zipfrom=" + zipfrom +
-    //     "&zipto=" + zipto +
-    //     "&weight=" + weight +
-    //     "&parceltype=" + parceltype;
-
-    //     console.log('url: ' + this.lineClearURL + url)
-
-    //     return this.http.get(this.lineClearURL + url , httpOptions);
-
-    // }
-
 
     postTracker(data):Observable<any> {
 
@@ -159,21 +112,5 @@ export class ApiService {
         return this.http.post(url, data, httpOptions);
     }
 
-
-    
-
-    // getPitstopLocator(postcode) {
-    //     const header = {
-    //         // headers: new HttpHeaders().set("Authorization", `Bearer ${this.token}`),
-    //         // 'Access-Control-Allow-Origin':'*',
-    //     };
-    //     // http://209.58.160.20:7072/carts/3/items?page=0&pageSize=20
-    //     const url =
-    //         "/quote/locatebranch.php"+
-    //         "?search=" + postcode;
-
-    //     return this.http.get(this.lineClearURL + url, header);
-    // }
-    
 
 }
