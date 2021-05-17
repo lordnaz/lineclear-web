@@ -38,7 +38,6 @@ export class LandingComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // $('#exampleModal').modal('show');
     document.getElementById("openModalButton").click();
 
     this.titleService.setTitle("Scan 2 Delivery Express Malaysia | Line Clear Express")
