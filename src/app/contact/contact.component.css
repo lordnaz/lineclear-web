@@ -6859,3 +6859,7 @@ input[type="file"] {
     border-top-right-radius: 10px;
     color: white !important;
   }
+
+  .point:hover{
+    cursor: pointer;
+  }

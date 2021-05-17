@@ -235,4 +235,20 @@ export class ContactComponent implements OnInit {
     
   }
 
+  goToFB(){
+        window.open('https://www.facebook.com/LineClearExpressMY/?ref=page_internal', '_blank');
+  }
+
+  goToInsta(){
+    window.open('https://www.instagram.com/lineclearexpress/', '_blank');
+  }
+
+  goToYoutube(){
+    window.open('https://www.youtube.com/channel/UCVkMuHnwc-XKdidhuyRo5Qw', '_blank');
+  }
+
+  goToTwitter(){
+    window.open('https://twitter.com/lineclearexpress', '_blank');
+  }
+
 }
