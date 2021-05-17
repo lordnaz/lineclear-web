@@ -81,7 +81,7 @@ export class PitstopComponent implements OnInit {
             if(res.length > 0){
 
             }else{
-                Swal.fire("We'r Sorry!", "No pitstop locator detected", "warning")
+                Swal.fire("We'r Sorry!", "No pitstop locator detected", "error")
             }
     
         }, error => {
