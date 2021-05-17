@@ -54,6 +54,10 @@
           <!-- <img src="/assets/image/step-1.png" class="center-block img-responsive step-img" style="margin-bottom: 10px;"> -->
           <img [src]="list.image" class="center-block img-responsive step-img" style="margin-bottom: 10px;">
         </div>
+
+        <div class="col-md-12 text-center" style="margin-top: 10px; margin-bottom: 10px;">
+            <p class="label" style="background-color: #243F8D;">TRACKER ID: {{list.data['0'].WayBillNumber}}</p>    
+        </div>
       </div>
       <div *ngFor="let item of list.data; first as isFirst" class="row" style="margin-top:15px; margin-bottom:15px;">
         <!-- <span *ngIf="isFirst">default</span> -->
