@@ -6802,3 +6802,6 @@ a:hover {
    }
 }
 
+.point:hover{
+    cursor: pointer;
+  }

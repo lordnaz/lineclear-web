@@ -75,10 +75,25 @@ export class FooterComponent implements OnInit {
     //   window.open('https://siasky.net/jACbuDlAEpz8NPP5utuWV56NdaCqPEornTCKQpO9xYcPhw', '_blank')
   }
 
-  public onClick(elementId: string): void { 
-    // this.viewportScroller.scrollToAnchor(elementId);
-    window.location.href = '/landing#AnchorId';
-}
+    goToFB(){
+        window.open('https://www.facebook.com/LineClearExpressMY/?ref=page_internal', '_blank');
+    }
+
+    goToInsta(){
+        window.open('https://www.instagram.com/lineclearexpress/', '_blank');
+    }
+
+    goToYoutube(){
+        window.open('https://www.youtube.com/channel/UCVkMuHnwc-XKdidhuyRo5Qw', '_blank');
+    }
+
+    goToTwitter(){
+        window.open('https://twitter.com/lineclearexpress', '_blank');
+    }
+
+    public onClick(elementId: string): void { 
+        window.location.href = '/landing#AnchorId';
+    }
   
 
 }
