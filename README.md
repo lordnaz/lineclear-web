@@ -10,8 +10,9 @@ An Angular project for Lineclear Express websites 2.0
 - Date Created : 20210516
 
 ## Contributor
-- Frontend Developer / UX : Nazrul Hanif
-- Frontend Developer / UI : Farhan Sulieman
+
+- Developer 1: [Nazrul Hanif](https://github.com/lordnaz)
+- Developer 2: [Farhan Sulieman](https://github.com/paanconz)
 - Designer : Amir 
 - Content Provider : Bella
 - Project Lead : Aaron
