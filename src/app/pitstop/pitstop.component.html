@@ -1,90 +1,5 @@
 <app-header></app-header>
 
-<!-- <div class="section" style="margin-top: 86px;">
-    <div class="background-image" style="background-image : url('/assets/image/banner-01.jpg'); background-position: bottom !important;"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12" style="padding-bottom:10px;">
-                  <h1 class="text-center">
-                    <b>PITSTOP LOCATOR</b>
-                  </h1>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-offset-3 col-md-6">
-                    <form (submit)="pitstopLocator()">
-                        <div class="form-group">
-                          <div class="input-group input-group-lg">
-                            <input [(ngModel)]="postcode" [(value)]="postcode" name="postcode" type="text" class="form-control" placeholder="Search by state,city and postcode">
-                            <span class="input-group-btn">
-                              <button class="btn btn-default track-btn" type="submit">Find Now</button>
-                            </span>
-                          </div>
-                        </div>
-                      </form>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section">
- 
-    <div class="container">
-      <div class="row">
-        <div *ngFor="let locator of branchLocator" class="col-md-6 col-sm-6 pit-div">
-          <div class="col-md-12 pit-name">
-            <h3 class="text-center" style="margin-top:10; padding:5px; text-transform: uppercase; font-weight: 900;">{{locator.place}}</h3>
-          </div>
-          <div class="col-md-12 pit-detail">
-            <div class="col-md-12">
-              <h4 style="font-weight: 700;">Address</h4>
-              <p class="p-text">{{locator.address}} {{locator.postcode}} {{locator.city}}, {{locator.state}}.</p>
-              <h4 style="font-weight: 700;">Person in Charge</h4>
-                <p class="p-text">{{locator.picname}}</p>
-                <h4 style="font-weight: 700;">Service Provided</h4>
-                <p class="p-text">{{locator.function}}</p>
-            </div>
-            <div class="col-md-6" style="word-wrap: break-word; ">
-              <h4 style="font-weight: 700;">Email</h4>
-              <p *ngFor="let sub_email of locator.picemail?.split(';')" class="p-text" style="padding-bottom: 5px;">{{sub_email}}</p>
-
-              <h4 style="font-weight: 700;">Contact Details</h4>
-              <p *ngFor="let sub_phone of locator.phone?.split(';')" class="p-text" style="padding-bottom: 5px;" class="p-text">{{sub_phone}}</p>
-            </div>
-            <div class="col-md-6">
-              <h4 style="font-weight: 700;">Operating Hours</h4>
-              <p class="p-text">8.00am-5.00pm</p>
-              <h4 style="font-weight: 700;">Find Us</h4>
-              <p style="padding-bottom: 20px !important;" class="p-text">
-                <a href="waze://?ll={{locator.latitude}},{{locator.longtitude}}&amp;navigate=yes" style="text-decoration: none;">Waze</a>
-                 &nbsp;| 
-                 <a href="https://maps.google.com?q={{locator.latitude}},{{locator.longtitude}}" style="text-decoration: none;">Google Map</a></p>
-
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-  <div class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12" style="height: 100px;"></div>
-      </div>
-    </div>
-  </div> -->
-
-
-
 <!-- New  -->
 <div class="section" id="section" [ngClass]="{'auto': isAuto, 'non_auto': !isAuto}">
     <div class="background-image background-image-fixed hidden-sm hidden-xs" style="background-image : url('./assets/image/desktop pitstop locator.jpg')"></div>
@@ -100,7 +15,6 @@
             <form (submit)="pitstopLocator()">
               <div class="form-group">
                 <div class="input-group-lg">
-                  <!-- <input [(ngModel)]="postcode" [(value)]="postcode" type="text" class="form-control" placeholder="Search by state,city and postcode"> -->
                   <input [(ngModel)]="postcode" [(value)]="postcode" name="postcode" type="text" class="form-control" placeholder="Search by state,city and postcode" style="font-size: 14px;">
                 </div>
                 <div class="input-group-lg mobile-center" style="text-align: right; padding-top: 10px;">
@@ -169,26 +83,3 @@
 </div>
 
 <app-footer></app-footer>
-
-<!-- <script>
-    $(document).ready(function(){
-        $("select").change(function(){
-            $(this).find("option:selected").each(function(){
-                var optionValue = $(this).attr("value");
-                if(optionValue){
-                    $(".form-pad").not("." + optionValue).hide();
-                    $("." + optionValue).show();
-                } else{
-                    $(".form-pad").hide();
-                }
-            });
-        }).change();
-
-        $('#button').click(function() {
-               
-            $('#section').css({
-                'height': 'auto',
-            });
-        });
-    });
-  </script> -->

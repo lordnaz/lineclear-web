@@ -1,11 +1,4 @@
-<!-- <p>quote works!</p> -->
-<!-- <div class="container-fluid">
-    <div class="row">
-        <div class="col bg-warning" style="height: 50px;">test</div>
-        <div class="col bg-danger" style="background-image : url('/assets/image/qoutebackground-04.jpg')">test</div>
-        <div class="col bg-success">test</div>
-    </div>
-</div> -->
+
 <app-header></app-header>
 
 <div class="section" style="margin-top: 86px;">
@@ -27,13 +20,11 @@
                     <h3 class="text-center">INSTANT QUOTE</h3>
                 </div>
               
-                <!-- <a target="_blank" href="mailto:someone@yoursite.com?cc=john@yoursite.com&amp;amp;amp;amp;bcc=bob@yoursite.com&amp;amp;amp;amp;subject=Requested%20documents&amp;amp;amp;amp;ni_email_cfg_base64json=ub2xvZ3kiXSwNCg">Example link</a> -->
-                
                 <form #quoteForm="ngForm" (submit)="quoteSubmit(quoteForm)" ngNativeValidate>
                     <div class="form-row">
                         <div class="col-md-6 form-group">
                             <label for="inputSender" class="control-label label-qoute">SENDER</label>
-                            <!-- <input ngModel #sender="ngModel" minlength="5" maxlength="5" name="inputSender" class="form-control input-lg" [ngClass]="{'is-invalid': isInvalid, 'is-valid': isValid}" placeholder="Sender Postcode" type="text" required> -->
+                          
                             <input ngModel #sender="ngModel" minlength="5" maxlength="5" name="inputSender" class="form-control input-lg" placeholder="Sender Postcode" type="text" required>
                             <div class="valid-feedback" *ngIf="sender.touched && !sender.invalid">
                                 <b>Perfect!</b>
@@ -46,7 +37,7 @@
 
                         <div class="col-md-6 form-group">
                             <label for="inputRecipient" class="control-label label-qoute">RECIPIENT</label>
-                            <!-- <input ngModel #recipient="ngModel" minlength="5" maxlength="5" name="inputRecipient" class="form-control input-lg" [ngClass]="{'is-invalid': isInvalid2, 'is-valid': isValid2}" placeholder="Recipient Postcode" type="text" required> -->
+                           
                             <input ngModel #recipient="ngModel" minlength="5" maxlength="5" name="inputRecipient" class="form-control input-lg" placeholder="Recipient Postcode" type="text" required>
                             <div class="valid-feedback" *ngIf="recipient.touched && !recipient.invalid">
                                 <b>perfect!</b>
@@ -63,13 +54,7 @@
                             <label for="inputWeight" class="control-label label-qoute">WEIGHT (KG)</label>
                             <input [(ngModel)]="inputWeight" [(value)]="inputWeight" name="inputWeight" class="form-control input-lg" placeholder="Item Weight (KG)" type="text" required>
 
-                            
                         </div>
-                        <!-- <div class="col-md-1 form-group">
-                            <button type="button" class="btn btn-primary" style="margin-top: 40px; float: left" data-toggle="modal" data-target="#modalCalculator">
-                                A
-                            </button>
-                        </div> -->
 
                         <div class="col-md-6 form-group">
                             <label for="inputType" class="control-label label-qoute">ITEM TYPE</label>
@@ -81,7 +66,6 @@
                     </div>
 
                     <div class="col-md-12 form-group">
-                        <!-- <a href="" (click)="showSpinner()">showSpinner</a> -->
                         <a class="btn btn-block btn-info btn-lg track-btn btn-qoute" data-toggle="modal" data-target="#modalCalculator">Volumetric Calculator</a>
                         <button class="btn btn-block btn-info btn-lg track-btn btn-qoute" type="submit">Quote Now !</button>
                     </div>
@@ -89,7 +73,7 @@
                 </form>
             </div>
           </div>
-        <!-- </form> -->
+        
 
           <ng-template #noResult>
 
@@ -177,7 +161,7 @@
             </div>
             <form (submit)="getVolume()" ngNativeValidate>
                 <div class="modal-body">
-                    <!-- <h1>Weight Calculator</h1> -->
+                  
                     <div class="form-row">
                         <div class="col form-group has-feedback text-center" style="padding-top: 25px; padding-bottom: 25px;">
                             <label for="inputWidth" class="control-label label-qoute">Width(cm)</label>
@@ -210,44 +194,11 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">&nbsp;Close</button>
                     <button type="submit" class="btn btn-success">Calculate&nbsp;</button>
-                    <!-- <button type="submit" class="btn btn-warning" >check Quantity&nbsp;<fa-icon [icon]="iconCart"></fa-icon></button> -->
+                    
                 </div>
             </form>
         </div>
     </div>
-</div>
-
-
-<!-- calculator -->
-<div class="form-popup" id="myForm">
-  <div  class="form-container">
-    <h1 class="mbr-section-subtitle mbr-fonts-style display-4">
-        <strong>Volumetric Calculator</strong>
-    </h1>
-    <label style="padding:0;padding-top:25px;font-size: 0.8em;">
-    <b>Width</b></label>
-    <input type="number" min="0" step="0.1" id="width" name="width"
-    onkeypress="return isNumberKey(event)" placeholder="Width (cm)"
-    class="form-control" value="">
-
-    <label style="padding:0;padding-top:25px;font-size: 0.8em;">
-    <b>Length</b></label>
-    <input type="number" min="0" step="0.1" id="length" name="height"
-    onkeypress="return isNumberKey(event)" placeholder="Length (cm)"
-    class="form-control" value="">
-
-    <label style="padding:0;padding-top:25px;font-size: 0.8em;">
-    <b>Height</b></label>
-    <input type="number" min="0" step="0.1" id="height" name="height"
-    onkeypress="return isNumberKey(event)" placeholder="Height (cm)"
-    class="form-control" value="">
-
-    <button class="btn" onclick="javascript:calculateDW();">Calculate</button>
-    <button class="btn cancel" onclick="closeForm()">Close</button>
-
-    <div id="errormessaged">
-    </div>
-  </div>
 </div>
 
 

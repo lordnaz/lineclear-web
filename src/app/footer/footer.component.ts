@@ -30,8 +30,7 @@ export class FooterComponent implements OnInit {
   }
 
   goToLanding(){
-    //   alert('hello')
-    //   return false
+
     this.route.navigate(['landing']);
   }
 
@@ -69,10 +68,6 @@ export class FooterComponent implements OnInit {
 
   openLineshield(){
     window.open('https://lineclearexpress.com/doc/lineshield.pdf', '_blank');
-  }
-
-  goTest(){
-    //   window.open('https://siasky.net/jACbuDlAEpz8NPP5utuWV56NdaCqPEornTCKQpO9xYcPhw', '_blank')
   }
 
     goToFB(){

@@ -67,13 +67,10 @@ export class QuoteComponent implements OnInit, AfterViewInit {
         const metaDesc = this.metaService.getTag('name=description'); 
 
         if(!metaDesc){
-            // console.log('meta tag added')
             this.metaService.addTags([
                 {name: "description", content: "Our nationwide branches and points in Malaysia. Pick Up; Delivery; Drop-off; Self Collect;"}
             ]);
         }else{
-
-            // console.log('meta tag updated')
             this.metaService.updateTag(  
                 { name: "description", content: "Our nationwide branches and points in Malaysia. Pick Up; Delivery; Drop-off; Self Collect;" },  
                 "name=description"  
@@ -84,7 +81,7 @@ export class QuoteComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(){
-        // this.spinner.show();
+        
     }
 
     showSpinner() {
@@ -101,24 +98,15 @@ export class QuoteComponent implements OnInit, AfterViewInit {
     hideSpinner(){
         // visible return false 
         this.visible = false;
-        // this.spinner.hide();
+        
     }
 
     setBool(){
         this.quote_result = !this.quote_result;
-        // this.showSpinner()
         this.inputWeight = null;
     }
 
     quoteSubmit(quoteForm){
-
-        // alert('inputWeight: ' + this.inputWeight);
-        // let data = {
-        //     'sender' : this.inputSender,
-        //     'recipient' : this.inputRecipient,
-        //     'weight' : this.inputWeight,
-        //     'type' : this.inputType
-        // }
 
         this.visible = true;
 
@@ -135,12 +123,8 @@ export class QuoteComponent implements OnInit, AfterViewInit {
         }else{
             this.itemType = 'Parcel'
         }
-        // this.showSpinner()
-
-        // return false
 
         this.apiService.getQuotation(this.inputSender, this.inputRecipient, this.inputWeight, this.inputType).subscribe((res: any) => {
-            console.log('response: ', res)
 
             if(res.servicetype =="ODA"){
                 this.surcharge = 21.20;
@@ -159,7 +143,6 @@ export class QuoteComponent implements OnInit, AfterViewInit {
         }, error => {
             Swal.fire("Oops...", "Error : Failed!", "error")
         }) 
-        // getQuotation
 
         setTimeout(() => {;
             this.visible = false
@@ -169,13 +152,10 @@ export class QuoteComponent implements OnInit, AfterViewInit {
 
     getVolume(){
 
-        // alert('inputWidth: ' + this.inputWidth + " | inputLength: " + this.inputLength + " | inputHeight: " + this.inputHeight);
-
         let answers:any = (this.inputWidth * this.inputLength * this.inputHeight )/6000;
 
         answers = answers.toFixed(1)
         
-        // alert('weight: ' + answers)
         this.inputWeight = answers
 
         // reset value
@@ -194,59 +174,6 @@ export class QuoteComponent implements OnInit, AfterViewInit {
 
             elem.dispatchEvent(evt);
         }, 350);
-        
-
-
-        // swal alert popup chain 
-        // Swal.mixin({
-        //     input: 'number',
-        //     confirmButtonText: 'Next &rarr;',
-        //     showCancelButton: false,
-        //     progressSteps: ['1', '2', '3'],
-        //     preConfirm: (result) => {
-        //         if(result === null || result === '' || result === undefined){
-        //             Swal.showValidationMessage(
-        //                 `Warning : Field is required`
-        //             );
-        //         }
-        //      },
-        //      allowOutsideClick: () => !Swal.isLoading()
-        // }).queue([
-        // {
-        //     title: 'Item Width',
-        //     text: 'in centimeter (cm)'
-        // },
-        // {
-        //     title: 'Item Length',
-        //     text: 'in centimeter (cm)'
-        // },
-        // {
-        //     title: 'Item Height',
-        //     text: 'in centimeter (cm)'
-        // }
-        // ]).then((result) => {
-        // if (result) {
-
-        //     const width = result['value'][0]
-        //     const length = result['value'][0]
-        //     const height = result['value'][0]
-
-        //     let answers:any = (width * length * height )/6000;
-        //     answers = answers.toFixed(1);
-
-        //     this.inputWeight = answers;
-
-        //     Swal.fire({
-        //     icon: 'success',
-        //     title: 'Successfully Calculated!',
-        //     html: `
-        //         <span style='font-weight: bold;'>FINAL WEIGHT : ${answers} KG</span>
-        //     `,
-        //     confirmButtonText: 'OK!',
-        //     footer: '<i>Brought to you by Line Clear Express&reg;</i>'
-        //     })
-        // }
-        // })
     }
 
 }

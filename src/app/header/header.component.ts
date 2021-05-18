@@ -16,8 +16,6 @@ export class HeaderComponent implements OnInit {
   }
 
   goToLanding(){
-    //   alert('hello')
-    //   return false
     this.route.navigate(['landing']);
   }
 

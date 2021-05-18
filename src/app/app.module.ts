@@ -24,7 +24,7 @@ import { TncComponent } from './tnc/tnc.component';
 import { TncCarriageComponent } from './tnc-carriage/tnc-carriage.component';
 import { PolicyComponent } from './policy/policy.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { AppearDirectiveDirective } from './appear-directive.directive';
+// import { AppearDirectiveDirective } from './appear-directive.directive';
 
 // Animation 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

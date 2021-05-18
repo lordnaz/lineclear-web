@@ -17,16 +17,6 @@
               </div>
               <div class="row">
                 <div class="col-md-offset-3 col-md-6">
-                  <!-- <form role="form">
-                    <div class="form-group">
-                      <div class="input-group input-group-lg">
-                        <input type="text" class="form-control" placeholder="Search by state,city and postcode">
-                        <span class="input-group-btn">
-                          <a class="btn btn-default track-btn" type="submit">Track Now</a>
-                        </span>
-                      </div>
-                    </div>
-                  </form> -->
 
                   <form (submit)="getTrackerData('viewHere')" class="form-horizontal form-track" role="form">
                         <div class="form-group">
@@ -51,7 +41,6 @@
     <div *ngFor="let list of trackerListRecon" class="container" style="margin-bottom: 50px;">
       <div class="row">
         <div class="col-md-12">
-          <!-- <img src="/assets/image/step-1.png" class="center-block img-responsive step-img" style="margin-bottom: 10px;"> -->
           <img [src]="list.image" class="center-block img-responsive step-img" style="margin-bottom: 10px;">
         </div>
 
@@ -60,7 +49,6 @@
         </div>
       </div>
       <div *ngFor="let item of list.data; first as isFirst" class="row" style="margin-top:15px; margin-bottom:15px;">
-        <!-- <span *ngIf="isFirst">default</span> -->
         <div class="col-md-8 col-md-offset-2 ">
           <div *ngIf="isFirst; else pendingJob" class="col-xs-4 col-sm-2 job-done" style="padding-right:0px; padding-left:0px;">
             <div class="col-md-12 time-col vcenter">

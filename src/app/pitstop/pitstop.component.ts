@@ -34,13 +34,10 @@ export class PitstopComponent implements OnInit {
     const metaDesc = this.metaService.getTag('name=description'); 
 
     if(!metaDesc){
-        // console.log('meta tag added')
         this.metaService.addTags([
             {name: "description", content: "Our nationwide branches and points in Malaysia. Pick Up; Delivery; Drop-off; Self Collect;"}
         ]);
     }else{
-
-        // console.log('meta tag updated')
         this.metaService.updateTag(  
             { name: "description", content: "Our nationwide branches and points in Malaysia. Pick Up; Delivery; Drop-off; Self Collect;" },  
             "name=description"  
@@ -64,7 +61,6 @@ export class PitstopComponent implements OnInit {
   hideSpinner(){
         // visible return false 
         this.visible = false;
-        // this.spinner.hide();
   }
 
   pitstopLocator(){
@@ -74,7 +70,6 @@ export class PitstopComponent implements OnInit {
 
     if(this.postcode != ""){
         this.apiService.getPitstopLocator(this.postcode).subscribe((res: any) => {
-            console.log('raw resp:', res)
     
             this.branchLocator = res
 

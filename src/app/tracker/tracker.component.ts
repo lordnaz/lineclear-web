@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -40,13 +39,10 @@ export class TrackerComponent implements OnInit {
     const metaDesc = this.metaService.getTag('name=description'); 
 
     if(!metaDesc){
-        // console.log('meta tag added')
         this.metaService.addTags([
             {name: "description", content: "Track & Trace Parcel with Line Clear Express Malaysia. Easy & Timely Delivery."}
         ]);
     }else{
-
-        // console.log('meta tag updated')
         this.metaService.updateTag(  
             { name: "description", content: "Track & Trace Parcel with Line Clear Express Malaysia. Easy & Timely Delivery." },  
             "name=description"  
@@ -68,14 +64,10 @@ export class TrackerComponent implements OnInit {
   hideSpinner(){
     // visible return false 
     this.visible = false;
-    // this.spinner.hide();
 }
 
 
   getTrackerData(elementId: string): void{
-
-    // alert('data: ' + this.trackCode)
-    // return false;
 
     this.visible = true;
 
@@ -89,18 +81,15 @@ export class TrackerComponent implements OnInit {
         // Trim the excess whitespace.
         str_array[i] = str_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
         // Add additional code here, such as:
-        console.log('tracker string: ' + str_array[i])
+        // console.log('tracker string: ' + str_array[i])
 
         dataArr.push(str_array[i])
     }
 
-    console.log('final arr: ', dataArr)
-    // return false
 
     let data = { "WayBillNumber" : dataArr }
 
     this.apiService.postTracker(data).subscribe((res: any) => {
-        console.log('raw resp:', res)
 
         if (res) {
             this.trackerDisplay = true
@@ -111,14 +100,6 @@ export class TrackerComponent implements OnInit {
         // this.trackerArr = res
         this.trackerList = res
 
-        console.log('new data: ', this.trackerListRecon)
-        
-        // console.log('tackerArr: ', this.trackerArr)
-        console.log('trackerList: ', this.trackerList)
-
-        var i = 0
-
-        let imageData = []
         let trackerData = []
 
         this.trackerList.forEach(trackerID => {
@@ -148,11 +129,7 @@ export class TrackerComponent implements OnInit {
     
         });
 
-        // console.log('trackerData arr: ', trackerData)
-
         this.trackerListRecon = trackerData
-
-        console.log('final trackerListRecon: ', this.trackerListRecon)
 
     }, error => {
         Swal.fire("Backend Error!", "Error : <small style='color: red; font-style: italic;'>" + error.error.message + "</small>", "error")

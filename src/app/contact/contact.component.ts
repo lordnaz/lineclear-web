@@ -57,13 +57,10 @@ export class ContactComponent implements OnInit {
     const metaDesc = this.metaService.getTag('name=description'); 
 
     if(!metaDesc){
-        // console.log('meta tag added')
         this.metaService.addTags([
             {name: "description", content: "Contact Us, we are happy to help to answer your questions"}
         ]);
     }else{
-
-        // console.log('meta tag updated')
         this.metaService.updateTag(  
             { name: "description", content: "Contact Us, we are happy to help to answer your questions" },  
             "name=description"  
@@ -72,7 +69,6 @@ export class ContactComponent implements OnInit {
   }
 
   selectedOpt(value:string){
-    // alert('picked: ' + value)
 
     switch (value) {
         case 'parcel':
@@ -113,14 +109,12 @@ export class ContactComponent implements OnInit {
                         "phone": this.parcelPhone,
                         "message": this.parcelMessage,
                     }
-
-                    console.log('let data: ', data1)
                 
                     this.apiService.postSendEmail(data1).subscribe((res: any) => {
-                        console.log('response: ', res)
+                        // console.log('response: ', res)
                 
                     }, error => {
-                        console.log('response: ', error)
+                        // console.log('response: ', error)
                     }) 
 
                 break;
@@ -133,14 +127,12 @@ export class ContactComponent implements OnInit {
                         "phone": this.lostPhone,
                         "message": this.lostMessage,
                     }
-
-                    console.log('let data: ', data2)
                 
                     this.apiService.postSendEmail(data2).subscribe((res: any) => {
-                        console.log('response: ', res)
+                        // console.log('response: ', res)
                 
                     }, error => {
-                        console.log('response: ', error)
+                        // console.log('response: ', error)
                     }) 
                 break;
             case 'accopen':
@@ -154,14 +146,12 @@ export class ContactComponent implements OnInit {
                         "address": this.accopenAddress,
                         "message": this.accopenMessage,
                     }
-
-                    console.log('let data: ', data3)
                 
                     this.apiService.postSendEmail(data3).subscribe((res: any) => {
-                        console.log('response: ', res)
+                        // console.log('response: ', res)
                 
                     }, error => {
-                        console.log('response: ', error)
+                        // console.log('response: ', error)
                     }) 
                 break;
             case 'crossborder':
@@ -175,14 +165,12 @@ export class ContactComponent implements OnInit {
                         "address": this.crossborderAddress,
                         "message": this.crossborderMessage,
                     }
-
-                    console.log('let data: ', data4)
                 
                     this.apiService.postSendEmail(data4).subscribe((res: any) => {
-                        console.log('response: ', res)
+                        // console.log('response: ', res)
                 
                     }, error => {
-                        console.log('response: ', error)
+                        // console.log('response: ', error)
                     }) 
                 break;
             case 'servicepoint':
@@ -194,14 +182,12 @@ export class ContactComponent implements OnInit {
                         "address": this.serviceAddress,
                         "message": this.serviceMessage,
                     }
-
-                    console.log('let data: ', data5)
                 
                     this.apiService.postSendEmail(data5).subscribe((res: any) => {
-                        console.log('response: ', res)
+                        // console.log('response: ', res)
                 
                     }, error => {
-                        console.log('response: ', error)
+                        // console.log('response: ', error)
                     }) 
                 break;
             case 'career':
@@ -212,14 +198,12 @@ export class ContactComponent implements OnInit {
                         "email": this.careerEmail,
                         "message": this.careerMessage,
                     }
-
-                    console.log('let data: ', data6)
                 
                     this.apiService.postSendEmail(data6).subscribe((res: any) => {
-                        console.log('response: ', res)
+                        // console.log('response: ', res)
                 
                     }, error => {
-                        console.log('response: ', error)
+                        // console.log('response: ', error)
                     }) 
                 break;
         

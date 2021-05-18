@@ -21,8 +21,7 @@ export class ApiService {
   }
 
   checkBaseUrl() {
-      // console.log("api service loaded");
-      // console.log((this.platformLocation as any).location.origin);
+
       this.currBaseURL = (this.platformLocation as any).location.origin;
 
       let prodURL = this.currBaseURL.match(/production.ai/g);
@@ -40,15 +39,6 @@ export class ApiService {
 
     getQuotation(zipfrom, zipto, weight, parceltype){
 
-        const httpOptions = {
-            headers: new HttpHeaders({
-                'Content-Type':  'application/json',
-                'Access-Control-Allow-Headers': 'Content-Type',
-                'Access-Control-Allow-Methods': 'GET',
-                'Access-Control-Allow-Origin': '*'
-              })
-        }
-
         const url =
         "/quote/quote.php"+
         "?zipfrom=" + zipfrom +
@@ -56,7 +46,6 @@ export class ApiService {
         "&weight=" + weight +
         "&parceltype=" + parceltype;
 
-        console.log('url: ' + this.lineClearURL + url)
 
         return this.http.get(this.lineClearURL + url);
     }
@@ -66,32 +55,22 @@ export class ApiService {
         const httpOptions = {
             headers: new HttpHeaders(
             { 
-                // 'Authorization': `Bearer ${this.token}`,
                 'Content-Type': 'application/json'
-                // 'Access-Control-Allow-Methods': 'POST',
-                // 'Access-Control-Allow-Origin': '*'
             })
         }
    
         const url =
         "/quote/inquire.php";
 
-        console.log('postSendEmail API: ' + this.lineClearURL + url)
-        // return this.http.post(this.lineClearURL + url);
         return this.http.post(url, data, httpOptions);
     }
 
 
     getPitstopLocator(postcode){
-        const header = {
-            // headers: new HttpHeaders().set("Authorization", `Bearer ${this.token}`),
-        };
-   
+
         const url =
         "/quote/locatebranch.php"+
         "?search=" + postcode;
-
-        console.log('url: ' + this.lineClearURL + url)
 
         return this.http.get(this.lineClearURL + url);
     }
@@ -103,8 +82,6 @@ export class ApiService {
             { 
                 'Authorization': `Bearer ${this.token}`,
                 'Content-Type': 'application/json'
-                // 'Access-Control-Allow-Methods': 'POST',
-                // 'Access-Control-Allow-Origin': '*'
             })
         }
         

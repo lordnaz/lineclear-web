@@ -19,17 +19,14 @@ export class AboutUsComponent implements OnInit {
         const metaDesc = this.metaService.getTag('name=description'); 
 
         if(!metaDesc){
-        // console.log('meta tag added')
-        this.metaService.addTags([
-            {name: "description", content: "Line Clear provides integrated supply chain management solutions from warehousing, moving, pick and pack, last mile delivery and track and trace. Customers are empowered through the Line Clear's smart Scan2Deliver technology to make end-to-end delivery using the web or app."}
-        ]);
+            this.metaService.addTags([
+                {name: "description", content: "Line Clear provides integrated supply chain management solutions from warehousing, moving, pick and pack, last mile delivery and track and trace. Customers are empowered through the Line Clear's smart Scan2Deliver technology to make end-to-end delivery using the web or app."}
+            ]);
         }else{
-
-        // console.log('meta tag updated')
-        this.metaService.updateTag(  
-            { name: "description", content: "Line Clear provides integrated supply chain management solutions from warehousing, moving, pick and pack, last mile delivery and track and trace. Customers are empowered through the Line Clear's smart Scan2Deliver technology to make end-to-end delivery using the web or app." },  
-            "name=description"  
-        )  
+            this.metaService.updateTag(  
+                { name: "description", content: "Line Clear provides integrated supply chain management solutions from warehousing, moving, pick and pack, last mile delivery and track and trace. Customers are empowered through the Line Clear's smart Scan2Deliver technology to make end-to-end delivery using the web or app." },  
+                "name=description"  
+            )  
         }
   }
 
