@@ -14,7 +14,7 @@
       </div>
     </div>
     <a class="left carousel-control" href="#fullcarousel-example" data-slide="prev"><i class="icon-prev fa fa-angle-left"></i></a>
-    <a class="right carousel-control" href="#fullcarousel-example" data-slide="next"><i class="icon-next fa fa-angle-right"></i></a>
+    <a class="right carousel-control" href="#fullcarousel-example" data-slide="next"><i class="icon-next fa fa-angle-right" id="viewHere"></i></a>
   </div>
   <div class="panel-row" style="z-index: 100;">
     <div class="row">
@@ -44,13 +44,15 @@
                 </div>
               </div>
             </form>
+
       </div>
+
     </div>  
 
   </div>
 
 
-    <div class="section" id="viewHere" *ngIf="trackerDisplay" style="padding-top: 100px;">
+    <div class="section" *ngIf="trackerDisplay" style="padding-top: 100px;">
         <div *ngFor="let list of trackerListRecon" class="container" style="margin-bottom: 50px;">
           <div class="row">
             <div class="col-md-12">

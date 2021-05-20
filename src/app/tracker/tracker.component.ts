@@ -87,15 +87,15 @@ export class TrackerComponent implements OnInit {
     }
 
 
-    let data = { "WayBillNumber" : dataArr }
+    let data = { 
+        "SearchType" : "WayBillNumber",
+        "WayBillNumber" : dataArr 
+    }
 
     this.apiService.postTracker(data).subscribe((res: any) => {
 
-        if (res) {
-            this.trackerDisplay = true
-        } else {
-            // condition if required for different type of response message 
-        }
+ 
+        this.trackerDisplay = true
 
         // this.trackerArr = res
         this.trackerList = res
@@ -107,7 +107,7 @@ export class TrackerComponent implements OnInit {
             // check 1st object since it is the latest status 
             let trackingstatus = trackerID[0]
 
-            console.log('tracking status: ', trackingstatus)
+            // console.log('tracking status: ', trackingstatus)
 
             switch (trackingstatus.Status) {
                 case "Delivered":
@@ -130,12 +130,68 @@ export class TrackerComponent implements OnInit {
         });
 
         this.trackerListRecon = trackerData
+        
+        this.trackCode = ""
 
     }, error => {
-        Swal.fire("Backend Error!", "Error : <small style='color: red; font-style: italic;'>" + error.error.message + "</small>", "error")
-    }) 
+        // Swal.fire("Backend Error!", "Error : <small style='color: red; font-style: italic;'>" + error.error.message + "</small>", "error")
 
-    this.trackCode = ""
+        this.trackerDisplay = false;
+
+        // looking for ShipmentRef
+
+        let data = { 
+            "SearchType" : "ShipmentRef",
+            "ShipmentRef" : dataArr 
+        }
+
+        this.apiService.postTracker(data).subscribe((res: any) => {
+            // console.log('raw resp:', res)
+    
+            this.trackerDisplay = true
+    
+            this.trackerList = res
+    
+            let trackerData = []
+    
+            this.trackerList.forEach(trackerID => {
+    
+                // check 1st object since it is the latest status 
+                let trackingstatus = trackerID[0]
+    
+                console.log('tracking status: ', trackingstatus)
+    
+                switch (trackingstatus.Status) {
+                    case "Delivered":
+                        this.imageTracker="./assets/image/step-5.png"
+                        break;
+                    case "Out for Delivery":
+                        this.imageTracker="./assets/image/step-4.png"
+                        break;
+                    case "Order Placed":
+                        this.imageTracker="./assets/image/step-1.png"
+                        break;
+                    default:
+                        // all other status will be in transit status 
+                        this.imageTracker="./assets/image/step-3.png"
+                        break;
+                }
+    
+                trackerData.push({"data" : trackerID, "image" : this.imageTracker})
+        
+            });
+    
+            this.trackerListRecon = trackerData
+    
+            this.trackCode = ""
+    
+        }, error => {
+            Swal.fire("Not Found!", "Error : <small style='color: red; font-style: italic;'>Item Not Found!</small>", "error")
+            this.trackerDisplay = false
+            
+        })
+        
+    }) 
 
     setTimeout(() => {;
         this.visible = false
