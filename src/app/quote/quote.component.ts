@@ -101,6 +101,11 @@ export class QuoteComponent implements OnInit, AfterViewInit {
         
     }
 
+
+    goToPortal(){
+        window.open('https://www.lineclearexpressonline.com/#/auth/login');
+      }
+
     setBool(){
         this.quote_result = !this.quote_result;
         this.inputWeight = null;

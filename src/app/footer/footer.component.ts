@@ -33,6 +33,12 @@ export class FooterComponent implements OnInit {
 
     this.route.navigate(['landing']);
   }
+  
+  goToService(){
+    window.location.href = '/landing/#AnchorId';
+    // this.route.navigateByUrl('/landing#AnchorID');
+    // this.router.navigate(['landing'], { fragment: 'AnchorID' });
+  }
 
   goToQuote(){
     this.route.navigate(['quotation']);
@@ -70,25 +76,26 @@ export class FooterComponent implements OnInit {
     window.open('https://lineclearexpress.com/doc/lineshield.pdf', '_blank');
   }
 
-    goToFB(){
-        window.open('https://www.facebook.com/LineClearExpressMY/?ref=page_internal', '_blank');
-    }
+  goToFB(){
+    window.open('https://www.facebook.com/LineClearExpressMY/?ref=page_internal', '_blank');
+  }
 
-    goToInsta(){
-        window.open('https://www.instagram.com/lineclearexpress/', '_blank');
-    }
+  goToInsta(){
+    window.open('https://www.instagram.com/lineclearexpress/', '_blank');
+  }
 
-    goToYoutube(){
-        window.open('https://www.youtube.com/channel/UCVkMuHnwc-XKdidhuyRo5Qw', '_blank');
-    }
+  goToYoutube(){
+      window.open('https://www.youtube.com/channel/UCVkMuHnwc-XKdidhuyRo5Qw', '_blank');
+  }
 
-    goToTwitter(){
-        window.open('https://twitter.com/lineclearexpress', '_blank');
-    }
+  goToTwitter(){
+      window.open('https://twitter.com/lineclearexpress', '_blank');
+  }
 
-    public onClick(elementId: string): void { 
-        window.location.href = '/landing#AnchorId';
-    }
+  public onClick(elementId: string): void { 
+      window.location.href = '/landing#AnchorId';
+  }
   
 
 }
+

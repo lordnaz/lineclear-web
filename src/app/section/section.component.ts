@@ -18,7 +18,9 @@ export class SectionComponent implements OnInit {
 
   }
 
-
+  openLineshield(){
+    window.open('https://lineclearexpress.com/doc/lineshield.pdf', '_blank');
+  }
 
   
 }
