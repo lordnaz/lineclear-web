@@ -35,7 +35,7 @@ export class FooterComponent implements OnInit {
   }
   
   goToService(){
-    window.location.href = '/landing/#AnchorId';
+    window.location.href = '/v2/landing/#AnchorId';
     // this.route.navigateByUrl('/landing#AnchorID');
     // this.router.navigate(['landing'], { fragment: 'AnchorID' });
   }
