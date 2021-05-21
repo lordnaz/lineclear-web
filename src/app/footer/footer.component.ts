@@ -93,7 +93,7 @@ export class FooterComponent implements OnInit {
   }
 
   public onClick(elementId: string): void { 
-      window.location.href = '/landing#AnchorId';
+      window.location.href = '/v2/landing#AnchorId';
   }
   
 
