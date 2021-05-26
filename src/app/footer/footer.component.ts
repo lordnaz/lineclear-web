@@ -35,7 +35,7 @@ export class FooterComponent implements OnInit {
   }
   
   goToService(){
-    window.location.href = '/v2/landing/#AnchorId';
+    window.location.href = '/v2/landing#AnchorId';
     // this.route.navigateByUrl('/landing#AnchorID');
     // this.router.navigate(['landing'], { fragment: 'AnchorID' });
   }
@@ -93,9 +93,24 @@ export class FooterComponent implements OnInit {
   }
 
   public onClick(elementId: string): void { 
-      window.location.href = '/v2/landing#AnchorId';
+
+    this.viewportScroller.scrollToAnchor(elementId);
+    
+    //   window.location.href = '/v2/landing#AnchorId';
   }
   
+  public goToFragment(fragment: string): void{
+
+    // let elementId = 'serviceId'
+    
+    // this.route.navigate(['/landing#'], { fragment: 'serviceId' });
+    // this.route.navigateByUrl('/landing#'+fragment)
+
+    // window.location.href = '/v2/landing#' + fragment;
+    window.location.href = '/landing#' + fragment;
+
+    // this.viewportScroller.scrollToAnchor(elementId);
+  }
 
 }
 
