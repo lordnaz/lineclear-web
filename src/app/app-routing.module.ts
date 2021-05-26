@@ -26,6 +26,10 @@ const routes: Routes = [
         component: LandingComponent
     },
     { 
+        path: "v2/landing", 
+        component: LandingComponent
+    },
+    { 
         path: "pitstop", 
         component: PitstopComponent
     },
@@ -60,9 +64,9 @@ const routes: Routes = [
     { 
         path: "about-us",
         component: AboutUsComponent
-    },
+    }
   
-    { path: "**", redirectTo: "/landing" }
+    // { path: "**", redirectTo: "/landing" }
 ];
 
 @NgModule({

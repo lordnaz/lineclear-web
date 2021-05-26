@@ -103,14 +103,24 @@ export class FooterComponent implements OnInit {
 
     // let elementId = 'serviceId'
     
+    // this.route.navigate( ['/landing#'], {fragment: fragment});
     // this.route.navigate(['/landing#'], { fragment: 'serviceId' });
-    // this.route.navigateByUrl('/landing#'+fragment)
-
+    // this.route.navigate(['/landing#'+fragment])
+    // this.redirectTo('/landing#serviceId');
     // window.location.href = '/v2/landing#' + fragment;
-    window.location.href = '/landing#' + fragment;
-
+    // window.location.href = '/landing#' + fragment;
+    // window.location.href = 'https://lineclearexpress.com/v2/landing#serviceId'
+    // window.location.replace("http://someUrl.com");
     // this.viewportScroller.scrollToAnchor(elementId);
+
+    // production
+    // this.route.navigateByUrl("/v2/landing#serviceId")
+
+    // staging 
+    this.route.navigateByUrl("/landing#serviceId")
+    
   }
+
 
 }
 
