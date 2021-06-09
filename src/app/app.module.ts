@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 // External Module 
 import { NgxSpinnerModule } from "ngx-spinner";
 import { FacebookModule } from "ngx-facebook";
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 // Component 
 import { AppComponent } from './app.component';
@@ -55,7 +56,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     CommonModule,
     FacebookModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SlickCarouselModule
     // AppearDirectiveDirective
     // RouterModule.forRoot(routes, { anchorScrolling: 'enabled'})
   ],

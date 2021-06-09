@@ -6792,6 +6792,12 @@ body {
   .img-size {
     width: 60% !important;
   }
+
+  .slick-slider {
+    width: 100% !important;
+    margin: auto;
+    background: rgb(14, 13, 13);
+  }
 }
 /* TABLET */
 @media only screen and (min-width: 768px) and (max-width: 967px) {
@@ -6815,6 +6821,13 @@ body {
 }
 /* DESKTOP */
 @media only screen and (min-width: 1824px) {
+
+  .slick-slider {
+    width: 75% !important;
+    margin: auto;
+    background: rgb(14, 13, 13);
+  }
+  
   .display-flex-center {
     display: flex;
     align-items: center;
@@ -6856,3 +6869,59 @@ body {
     font-weight: bold;
     font-size: 20px;
   }
+
+  .slick-slider {
+    width: 85%;
+    margin: auto;
+    background: rgb(14, 13, 13);
+  }
+  
+body .slick-prev, 
+body .slick-next {
+    height: 45px;
+    width: 40px;
+    background: grey !important;
+    z-index: 100;
+}
+
+.slick-slide img {
+  padding:10px;
+}
+
+.slick-slider{
+  background: transparent !important;
+}
+
+.slick-slide img:focus {
+  border: none !important;
+}
+
+.slide:focus {
+  border: none !important;
+}
+
+.slide a {
+  color: transparent !important;
+  text-decoration: none !important;
+  border-color: transparent !important;
+  outline: none !important;
+}
+
+.slide a:focus {
+  color: transparent !important;
+  text-decoration: none !important;
+  border-color: transparent !important;
+  outline: none !important;
+  
+}
+
+.slide a:hover {
+  color: transparent !important;
+  text-decoration: none !important;
+  border-color: transparent !important;
+  outline: none !important;
+}
+
+.point:hover{
+  cursor: pointer;
+}
