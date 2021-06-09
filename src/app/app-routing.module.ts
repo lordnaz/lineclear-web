@@ -68,9 +68,10 @@ const routes: Routes = [
     { 
         path: "about-us",
         component: AboutUsComponent
-    }
+    },
   
     // { path: "**", redirectTo: "/landing" }
+    { path: "**", redirectTo: "/landing", pathMatch: "full" }
 ];
 
 @NgModule({
