@@ -62,7 +62,7 @@ export class ContactComponent implements OnInit {
         ]);
     }else{
         this.metaService.updateTag(  
-            { name: "description", content: "Contact Us, we are happy to help to answer your questions" },  
+            {name: "description", content: "Contact Us, we are happy to help to answer your questions" },  
             "name=description"  
         )  
     }

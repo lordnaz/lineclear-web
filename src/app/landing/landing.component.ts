@@ -37,7 +37,7 @@ export class LandingComponent implements OnInit {
 
     document.getElementById("openModalButton").click();
 
-    this.titleService.setTitle("Scan 2 Delivery Express Malaysia | Line Clear Express")
+    this.titleService.setTitle("Scan 2 Deliver Express Malaysia | Line Clear Express")
 
     const metaDesc = this.metaService.getTag('name=description'); 
 
@@ -49,7 +49,7 @@ export class LandingComponent implements OnInit {
     }else{
 
         this.metaService.updateTag(  
-            { name: "description", content: "Provides nationwide courier and  integrated supply chain management solutions from warehousing, pick and pack, last mile delivery and track and trace. Customers are empowered through the Line Clear's smart Scan2Deliver technology to make end-to-end delivery using the web or app." },  
+            {name: "description", content: "Provides nationwide courier and  integrated supply chain management solutions from warehousing, pick and pack, last mile delivery and track and trace. Customers are empowered through the Line Clear's smart Scan2Deliver technology to make end-to-end delivery using the web or app."},  
             "name=description"  
           )  
     }
