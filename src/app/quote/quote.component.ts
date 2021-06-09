@@ -68,11 +68,11 @@ export class QuoteComponent implements OnInit, AfterViewInit {
 
         if(!metaDesc){
             this.metaService.addTags([
-                {name: "description", content: "Our nationwide branches and points in Malaysia. Pick Up; Delivery; Drop-off; Self Collect;"}
+                {name: "description", content: "Low Shipping Rate with Line Clear Express Malaysia. Easy & Timely Delivery"}
             ]);
         }else{
             this.metaService.updateTag(  
-                { name: "description", content: "Our nationwide branches and points in Malaysia. Pick Up; Delivery; Drop-off; Self Collect;" },  
+                {name: "description", content: "Low Shipping Rate with Line Clear Express Malaysia. Easy & Timely Delivery"},  
                 "name=description"  
             )  
         }

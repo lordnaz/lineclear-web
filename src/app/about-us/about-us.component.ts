@@ -24,7 +24,7 @@ export class AboutUsComponent implements OnInit {
             ]);
         }else{
             this.metaService.updateTag(  
-                { name: "description", content: "Line Clear provides integrated supply chain management solutions from warehousing, moving, pick and pack, last mile delivery and track and trace. Customers are empowered through the Line Clear's smart Scan2Deliver technology to make end-to-end delivery using the web or app." },  
+                {name: "description", content: "Line Clear provides integrated supply chain management solutions from warehousing, moving, pick and pack, last mile delivery and track and trace. Customers are empowered through the Line Clear's smart Scan2Deliver technology to make end-to-end delivery using the web or app." },  
                 "name=description"  
             )  
         }

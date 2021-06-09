@@ -40,11 +40,11 @@ export class TrackerComponent implements OnInit {
 
     if(!metaDesc){
         this.metaService.addTags([
-            {name: "description", content: "Track & Trace Parcel with Line Clear Express Malaysia. Easy & Timely Delivery."}
+            {name: "description", content: "Track & Trace Parcel with Line Clear Express Malaysia. Easy & Timely Delivery"}
         ]);
     }else{
         this.metaService.updateTag(  
-            { name: "description", content: "Track & Trace Parcel with Line Clear Express Malaysia. Easy & Timely Delivery." },  
+            {name: "description", content: "Track & Trace Parcel with Line Clear Express Malaysia. Easy & Timely Delivery"},  
             "name=description"  
           )  
     }
