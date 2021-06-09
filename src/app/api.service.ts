@@ -28,11 +28,11 @@ export class ApiService {
       let localURL = this.currBaseURL.match(/localhost/g);
 
       if (prodURL != null) {
-          this.lineClearURL = "https://lineclearexpress.com/my";
+          this.lineClearURL = "https://lineclearexpress.com/my2";
           this.trackerURL = "https://8ym3webome.execute-api.ap-south-1.amazonaws.com/production/1.0"
 
       } else {
-          this.lineClearURL = "https://lineclearexpress.com/my";
+          this.lineClearURL = "https://lineclearexpress.com/my2";
           this.trackerURL = "https://8ym3webome.execute-api.ap-south-1.amazonaws.com/production/1.0"
       }
   }

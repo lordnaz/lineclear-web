@@ -16,11 +16,11 @@ import { AboutUsComponent } from './about-us/about-us.component';
 const routes: Routes = [
 
   // sample later change 
-    // { path: "", redirectTo: "/landing", pathMatch: "full" },
-    { 
-        path: "", 
-        component: LandingComponent
-    },
+    { path: "", redirectTo: "/landing", pathMatch: "full" },
+    // { 
+    //     path: "", 
+    //     component: LandingComponent
+    // },
     { 
         path: "quotation", 
         component: QuoteComponent
@@ -76,7 +76,8 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
                                             scrollPositionRestoration: 'enabled', 
-                                            anchorScrolling: 'enabled'
+                                            anchorScrolling: 'enabled',
+                                            onSameUrlNavigation: 'reload'
                                         })],
   exports: [RouterModule]
 })
