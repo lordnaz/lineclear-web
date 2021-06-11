@@ -7,32 +7,32 @@
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 <url>
-  <loc>https://lineclearexpress.com/my/</loc>
+  <loc>https://lineclearexpress.com/v2/</loc>
   <lastmod>2021-05-26T03:29:51+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://lineclearexpress.com/my/landing/</loc>
+  <loc>https://lineclearexpress.com/v2/landing/</loc>
   <lastmod>2021-05-26T03:29:51+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://lineclearexpress.com/my/tracker</loc>
+  <loc>https://lineclearexpress.com/v2/tracker</loc>
   <lastmod>2021-05-26T03:29:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://lineclearexpress.com/my/quotation</loc>
+  <loc>https://lineclearexpress.com/v2/quotation</loc>
   <lastmod>2021-05-26T03:29:51+00:00</lastmod>
   <priority>0.70</priority>
 </url>
 <url>
-  <loc>https://lineclearexpress.com/my/pitstop</loc>
+  <loc>https://lineclearexpress.com/v2/pitstop</loc>
   <lastmod>2021-05-26T03:29:51+00:00</lastmod>
   <priority>0.60</priority>
 </url>
 <url>
-  <loc>https://lineclearexpress.com/my/contactus</loc>
+  <loc>https://lineclearexpress.com/v2/contactus</loc>
   <lastmod>2021-05-26T03:29:51+00:00</lastmod>
   <priority>0.50</priority>
 </url>

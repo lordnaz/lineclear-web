@@ -13,9 +13,7 @@ An Angular project for Lineclear Express websites 2.0
 
 - Developer 1: [Nazrul Hanif](https://github.com/lordnaz)
 - Developer 2: [Farhan Sulieman](https://github.com/paanconz)
-- Designer : Amir 
-- Content Provider : Bella
-- Project Lead : Aaron
+
 
 
 ## Local Setup

@@ -71,7 +71,7 @@ const routes: Routes = [
     },
   
     // { path: "**", redirectTo: "/landing" }
-    { path: "**", redirectTo: "/landing", pathMatch: "full" }
+    // { path: "**", redirectTo: "/landing", pathMatch: "full" }
 ];
 
 @NgModule({

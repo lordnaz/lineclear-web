@@ -78,8 +78,8 @@
           "options": {
             "browserTarget": "lineclear:build",
             "proxyConfig": "proxy.conf.json",
-            "baseHref": "/my/",
-            "deployUrl": "/my/"
+            "baseHref": "/v2/",
+            "deployUrl": "/v2/"
           },
           "configurations": {
             "production": {

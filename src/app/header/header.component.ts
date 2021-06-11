@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
     //     window.location.reload();
     // });
 
-    window.location.href = this.currBaseURL + '/my/landing'
+    window.location.href = this.currBaseURL + '/v2/landing'
 
     // alert(this.currBaseURL)
 
