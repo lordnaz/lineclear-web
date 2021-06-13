@@ -16,18 +16,13 @@ import { AboutUsComponent } from './about-us/about-us.component';
 const routes: Routes = [
 
   // sample later change 
-    { path: "", redirectTo: "/landing", pathMatch: "full" },
-    // { 
-    //     path: "", 
-    //     component: LandingComponent
-    // },
-    { 
-        path: "quotation", 
-        component: QuoteComponent
-    },
     { 
         path: "landing", 
         component: LandingComponent
+    },
+    { 
+        path: "quotation", 
+        component: QuoteComponent
     },
     // { 
     //     path: "v2/landing", 
@@ -69,6 +64,11 @@ const routes: Routes = [
         path: "about-us",
         component: AboutUsComponent
     },
+    { path: "", redirectTo: "/landing", pathMatch: "full" }
+    // { 
+    //     path: "", 
+    //     component: LandingComponent
+    // },
   
     // { path: "**", redirectTo: "/landing" }
     // { path: "**", redirectTo: "/landing", pathMatch: "full" }
