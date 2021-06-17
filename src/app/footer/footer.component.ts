@@ -31,11 +31,11 @@ export class FooterComponent implements OnInit {
 
   goToLanding(){
 
-    this.route.navigate(['landing']);
+    this.route.navigate(['']);
   }
   
   goToService(){
-    window.location.href = '/v2/landing#AnchorId';
+    window.location.href = '/#AnchorId';
     // this.route.navigateByUrl('/landing#AnchorID');
     // this.router.navigate(['landing'], { fragment: 'AnchorID' });
   }
@@ -117,7 +117,7 @@ export class FooterComponent implements OnInit {
     // this.route.navigateByUrl("/v2/landing#serviceId")
 
     // staging 
-    this.route.navigateByUrl("/landing#serviceId")
+    this.route.navigateByUrl("/#serviceId")
     
   }
 

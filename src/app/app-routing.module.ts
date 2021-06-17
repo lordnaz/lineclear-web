@@ -16,10 +16,10 @@ import { AboutUsComponent } from './about-us/about-us.component';
 const routes: Routes = [
 
   // sample later change 
-    { 
-        path: "landing", 
-        component: LandingComponent
-    },
+    // { 
+    //     path: "landing", 
+    //     component: LandingComponent
+    // },
     { 
         path: "quotation", 
         component: QuoteComponent
