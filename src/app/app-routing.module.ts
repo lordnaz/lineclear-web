@@ -21,6 +21,10 @@ const routes: Routes = [
     //     component: LandingComponent
     // },
     { 
+        path: "", 
+        component: LandingComponent
+    },
+    { 
         path: "quotation", 
         component: QuoteComponent
     },
@@ -65,10 +69,6 @@ const routes: Routes = [
         component: AboutUsComponent
     },
     // { path: "", redirectTo: "/landing", pathMatch: "full" }
-    { 
-        path: "", 
-        component: LandingComponent
-    },
   
     // { path: "**", redirectTo: "/landing" }
     // { path: "**", redirectTo: "/landing", pathMatch: "full" }
