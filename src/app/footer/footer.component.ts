@@ -92,6 +92,14 @@ export class FooterComponent implements OnInit {
       window.open('https://twitter.com/lineclearexpress', '_blank');
   }
 
+  colorWinTnc(){
+    window.open('https://lineclearexpress.com/doc/colorwin_tnc.pdf', '_blank');
+  }
+
+  hantarMenangTnc(){
+    window.open('https://lineclearexpress.com/doc/HantarDanMenang.pdf', '_blank');
+  }
+
   public onClick(elementId: string): void { 
 
     this.viewportScroller.scrollToAnchor(elementId);

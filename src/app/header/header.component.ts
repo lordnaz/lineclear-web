@@ -23,14 +23,14 @@ export class HeaderComponent implements OnInit {
   }
 
   goToLanding(){
-    // this.route.navigate(['landing']);
+    this.route.navigate(['']);
     // this.route.navigateByUrl("/landing")
     // this.route.navigate(['landing'])
     // .then(() => {
     //     window.location.reload();
     // });
 
-    window.location.href = this.currBaseURL + '/'
+    // window.location.href = this.currBaseURL + '/'
 
     // alert(this.currBaseURL)
 

@@ -222,4 +222,12 @@ getTrackerData(elementId: string): void{
     window.open('https://apps.apple.com/my/app/line-clear-oms/id1555210200', '_blank');
   }
 
+  colorWinTnc(){
+    window.open('https://lineclearexpress.com/doc/colorwin_tnc.pdf', '_blank');
+  }
+
+  hantarMenangTnc(){
+    window.open('https://lineclearexpress.com/doc/HantarDanMenang.pdf', '_blank');
+  }
+
 }
