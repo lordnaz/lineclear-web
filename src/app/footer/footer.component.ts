@@ -73,7 +73,8 @@ export class FooterComponent implements OnInit {
   }
 
   openLineshield(){
-    window.open('https://lineclearexpress.com/doc/lineshield.pdf', '_blank');
+    // window.open('https://lineclearexpress.com/doc/lineshield.pdf', '_blank');
+    this.route.navigate(['lineshield']);
   }
 
   goToFB(){
@@ -98,6 +99,10 @@ export class FooterComponent implements OnInit {
 
   hantarMenangTnc(){
     window.open('https://lineclearexpress.com/doc/HantarDanMenang.pdf', '_blank');
+  }
+
+  goToFaq(){
+    this.route.navigate(['faq']);
   }
 
   public onClick(elementId: string): void { 

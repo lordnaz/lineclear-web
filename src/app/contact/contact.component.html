@@ -16,7 +16,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8" style="padding: 0 30;">
-          <div class="row">
+          <div class="row g-0">
             <select class="form-control input-lg"
             #mySelect
             (change)='selectedOpt(mySelect.value)'>
@@ -30,7 +30,7 @@
           </div>
 
 
-          <div class="row form-pad parcel" *ngIf="isOpt == 'parcel'">
+          <div class="row form-pad parcel g-0" *ngIf="isOpt == 'parcel'">
             <form (submit)="sendMail()" class="form-horizontal" role="form" ngNativeValidate>
               <div class="form-group">
                 <div class="col-sm-6 mobile-pad">
@@ -70,7 +70,7 @@
           </div>
 
 
-          <div class="row form-pad lost" *ngIf="isOpt == 'lost'">
+          <div class="row form-pad lost g-0" *ngIf="isOpt == 'lost'">
             <form (submit)="sendMail()" class="form-horizontal" role="form" ngNativeValidate>
               <div class="form-group">
                 <div class="col-sm-6 mobile-pad">
@@ -110,7 +110,7 @@
           </div>
 
 
-          <div class="row form-pad accopen" *ngIf="isOpt == 'accopen'">
+          <div class="row form-pad accopen g-0" *ngIf="isOpt == 'accopen'">
             <form (submit)="sendMail()" class="form-horizontal" role="form" ngNativeValidate>
               <div class="form-group">
                 <div class="col-sm-6 mobile-pad">
@@ -150,7 +150,7 @@
           </div>
 
 
-          <div class="row form-pad crossborder" *ngIf="isOpt == 'crossborder'">
+          <div class="row form-pad crossborder g-0" *ngIf="isOpt == 'crossborder'">
             <form (submit)="sendMail()" class="form-horizontal" role="form" ngNativeValidate>
               <div class="form-group">
                 <div class="col-sm-6 mobile-pad">
@@ -196,7 +196,7 @@
           </div>
 
 
-          <div class="row form-pad servicepoint" *ngIf="isOpt == 'servicepoint'">
+          <div class="row form-pad servicepoint g-0" *ngIf="isOpt == 'servicepoint'">
             <form (submit)="sendMail()" class="form-horizontal" role="form" ngNativeValidate>
               <div class="form-group">
                 <div class="col-sm-6 mobile-pad">
@@ -232,7 +232,7 @@
           </div>
 
 
-          <div class="row form-pad career" id="career" *ngIf="isOpt == 'career'">
+          <div class="row form-pad career g-0" id="career" *ngIf="isOpt == 'career'">
             <form (submit)="sendMail()" class="form-horizontal" role="form" ngNativeValidate>
               <div class="form-group ">
                 <div class="col-sm-6 mobile-pad">

@@ -29,6 +29,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 
 // Animation 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LineshieldComponent } from './lineshield/lineshield.component';
+import { FaqComponent } from './faq/faq.component';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TncComponent,
     TncCarriageComponent,
     PolicyComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    LineshieldComponent,
+    FaqComponent
     // AppearDirectiveDirective
   ],
   imports: [

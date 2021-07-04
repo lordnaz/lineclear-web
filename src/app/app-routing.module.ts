@@ -12,6 +12,8 @@ import { TncComponent } from './tnc/tnc.component';
 import { TncCarriageComponent } from './tnc-carriage/tnc-carriage.component';
 import { PolicyComponent } from './policy/policy.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { LineshieldComponent } from './lineshield/lineshield.component';
+import { FaqComponent } from './faq/faq.component';
 
 const routes: Routes = [
 
@@ -67,6 +69,14 @@ const routes: Routes = [
     { 
         path: "about-us",
         component: AboutUsComponent
+    },
+    { 
+        path: "lineshield",
+        component: LineshieldComponent
+    },
+    { 
+        path: "faq",
+        component: FaqComponent
     },
     // { path: "", redirectTo: "/landing", pathMatch: "full" }
   

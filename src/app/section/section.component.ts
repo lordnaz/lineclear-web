@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener, HostBinding } from '@angular/core';
+import { Router } from '@angular/router';
 // import { trigger, state, style, animate, transition} from '@angular/animations';
 
 @Component({
@@ -78,14 +79,17 @@ export class SectionComponent implements OnInit {
     
     
 
-  constructor() { }
+  constructor(
+    private route: Router
+  ) { }
 
   ngOnInit(): void {
 
   }
 
   openLineshield(){
-    window.open('https://lineclearexpress.com/doc/lineshield.pdf', '_blank');
+    // window.open('https://lineclearexpress.com/doc/lineshield.pdf', '_blank');
+    this.route.navigate(['lineshield']);
   }
 
   goToFB(){

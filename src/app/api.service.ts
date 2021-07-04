@@ -11,7 +11,9 @@ export class ApiService {
   lineClearURL: any;
   currBaseURL: any;
   trackerURL:any;
+  cmsURL: any;
   token:any = 'eyJhbGciOiJIUzI1NiJ9.QkVTVF9MQ1VOSV9FU1NQTA.1FcVvOUwquYYuoyA5yBrPcOLNUDf8iJaAZCqNZgjVys';
+  tokenCMS:any = 'UYbQRrlqvwYqteujwoQ4acsvdx3tEF2gBPiQWwQa';
 
   constructor(
       private http: HttpClient,
@@ -30,12 +32,30 @@ export class ApiService {
       if (prodURL != null) {
           this.lineClearURL = "https://lineclearexpress.com/my";
           this.trackerURL = "https://8ym3webome.execute-api.ap-south-1.amazonaws.com/production/1.0"
+          this.cmsURL = "https://lineclear-cms.nfylegacy.biz.my"
+        //   https://lineclear-cms.nfylegacy.biz.my/api/retrieve_faq
 
       } else {
           this.lineClearURL = "https://lineclearexpress.com/my";
           this.trackerURL = "https://8ym3webome.execute-api.ap-south-1.amazonaws.com/production/1.0"
+          this.cmsURL = "https://lineclear-cms.nfylegacy.biz.my"
       }
   }
+
+
+    getFaqList():Observable<any> {
+
+        const httpOptions = {
+            headers: new HttpHeaders(
+            { 
+                'Authorization': `Bearer ${this.tokenCMS}`,
+                'Content-Type': 'application/json'
+            })
+        }
+        
+        const url = this.cmsURL + "/api/retrieve_faq";
+        return this.http.get(url, httpOptions);
+    }
 
     getQuotation(zipfrom, zipto, weight, parceltype){
 
