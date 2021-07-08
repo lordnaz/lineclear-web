@@ -56,4 +56,8 @@ export class HeaderComponent implements OnInit {
     window.open('https://www.lineclearexpressonline.com/#/auth/login');
   }
 
+  goToFaq(){
+    this.route.navigate(['faq']);
+  }
+
 }

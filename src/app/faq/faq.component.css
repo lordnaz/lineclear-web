@@ -6884,3 +6884,26 @@ span {
     background: url("http://placehold.it/50x50") top left no-repeat;
     background-size: cover;
 }
+
+
+.accordion-button:not(.collapsed) {
+    /* color: #0c63e4; */
+    background-color: unset !important;
+    /* box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%); */
+}
+
+.accordion-button{
+    padding: unset !important;
+}
+
+.showaAll{
+    border: 2px solid #dee2e6;
+}
+
+@media (max-width: 767px) {
+
+    .showaAll{
+        margin-top: 20px;
+    }
+
+}

@@ -9,6 +9,7 @@ import { ApiService } from '../api.service';
 export class FaqComponent implements OnInit {
 
     faq_collection: any;
+    showAll: boolean = false;
 
   constructor(
     private apiService: ApiService
@@ -42,6 +43,12 @@ export class FaqComponent implements OnInit {
       alert(toggle)
 
     
+  }
+
+  showAllTrigger(){
+      this.showAll = !this.showAll;
+
+    //   alert(this.showAll)
   }
 
 }
