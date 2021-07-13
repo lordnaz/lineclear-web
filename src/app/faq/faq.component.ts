@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Title, Meta } from '@angular/platform-browser'; 
 
 @Component({
   selector: 'app-faq',
@@ -12,12 +13,28 @@ export class FaqComponent implements OnInit {
     showAll: boolean = false;
 
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private titleService: Title,
+    private metaService: Meta
   ) { }
 
   ngOnInit(): void {
 
-    console.log('MASOK')
+    this.titleService.setTitle("Frequent Ask Question")
+
+    const metaDesc = this.metaService.getTag('name=description'); 
+
+    if(!metaDesc){
+        this.metaService.addTags([
+            {name: "description", content: "Questiones related to Line Clear Express"}
+        ]);
+    }else{
+        this.metaService.updateTag(  
+            {name: "description", content: "Questiones related to Line Clear Express" },  
+            "name=description"  
+        )  
+    }
+
     this.retrieveFaqList();
 
   }
